@@ -423,13 +423,6 @@
                   </div>
                   <h6 class="mb-0">Finish the logo design</h6>
                 </div>
-                <div class="col-auto">
-                  <div class="actions text-right">
-                    <a href="#" class="action-item action-favorite active" data-toggle="tooltip" data-original-title="Mark as favorite">
-                      <i class="fas fa-star"></i>
-                    </a>
-                  </div>
-                </div>
               </div>
               <div class="modal-body">
                 <!-- Task date -->
@@ -518,10 +511,506 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          
-        </div>
-        <div class="row">
+      <div class="card" data-toggle="dragula" data-containers='["card-list-1", "card-list-2", "card-list-3"]'>
+          <!-- Card header -->
+          <div class="card-header actions-toolbar">
+            <div class="actions-search" id="actions-search">
+              <div class="input-group input-group-merge input-group-flush">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control form-control-flush" placeholder="Type and hit enter ...">
+                <div class="input-group-append">
+                  <a href="#" class="input-group-text bg-transparent" data-action="search-close" data-target="#actions-search"><i class="fas fa-times"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+              <div class="col">
+                <h6 class="d-inline-block mb-0">Inbox</h6>
+              </div>
+              <div class="col text-right">
+                <div class="actions"><a href="#" class="action-item mr-3" data-action="search-open" data-target="#actions-search"><i class="fas fa-search"></i></a>
+                  <div class="dropdown mr-3">
+                    <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-filter"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-sort-amount-down"></i>Newest
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-sort-alpha-down"></i>From A-Z
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-sort-alpha-up"></i>From Z-A
+                      </a>
+                    </div>
+                  </div>
+                  <div class="dropdown" data-toggle="dropdown">
+                    <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a href="#" class="dropdown-item">Refresh</a>
+                      <a href="#" class="dropdown-item">Manage Widgets</a>
+                      <a href="#" class="dropdown-item">Settings</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card body -->
+          <div class="card-body">
+            <h5 class="mb-3">Design</h5>
+            <div class="mb-5" id="card-list-1">
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Create the app's wireframe</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-warning border border-warning badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>50%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-1.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Create the login and register with Laravel</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-danger border border-danger badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>30%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-2.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Finish the logo design</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-success border border-success badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>90%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-3.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Empty container -->
+              <span class="empty-container" data-placeholder="Empty"></span>
+            </div>
+            <h5 class="mb-3">Market</h5>
+            <div class="mb-5" id="card-list-2">
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Set up the marketplace strategy</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-info border border-info badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>70%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-3.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Create the Facebook campaign setup</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-danger border border-danger badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>10%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-1.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Compose newsletter for the big launch</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-info border border-info badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>70%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-2.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Set up the marketplace strategy</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-info border border-info badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>70%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-2.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Create the Facebook campaign setup</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-danger border border-danger badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>10%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-1.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Empty container -->
+              <span class="empty-container" data-placeholder="Empty"></span>
+            </div>
+            <h5 class="mb-3">Branding</h5>
+            <div class="mb-5" id="card-list-3">
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Call with Dave</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-success border border-success badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>70%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-2.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Lunch meeting</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-warning border border-warning badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>70%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-3.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Webpixels website redesign</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-info border border-info badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>70%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-1.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-progress border shadow-none draggable-item">
+                <div class="progress">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="card-body row align-items-center">
+                  <div class="col-sm-6">
+                    <a class="h6" href="#modal-task-view" data-toggle="modal">Webpixels website redesign</a>
+                    <div class="actions d-inline-block float-right float-sm-none">
+                      <div class="action-item ml-4">
+                        <i class="fas fa-comment-alt mr-2"></i>6
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                    <div>
+                      <span class="badge text-info border border-info badge-pill mr-3"></span>
+                    </div>
+                    <div class="actions d-inline-block">
+                      <div class="action-item mr-2">
+                        <i class="fas fa-check-circle mr-2"></i>70%
+                      </div>
+                      <div class="action-item mr-3">
+                        <i class="fas fa-file mr-2"></i>3
+                      </div>
+                    </div>
+                    <div class="media media-pill align-items-center d-inline-flex bg-secondary">
+                      <span class="avatar avatar-sm rounded-circle">
+                        <img alt="Image placeholder" src="../../assets/img/theme/light/thumb-1.jpg">
+                      </span>
+                      <div class="ml-2">
+                        <a href="#modal-users" class="mb-0 text-sm text-muted stretched-link" data-toggle="modal">+3</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Empty container -->
+              <span class="empty-container" data-placeholder="Empty"></span>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Footer -->
