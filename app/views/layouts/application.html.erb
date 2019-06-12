@@ -7,40 +7,38 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-<body class="application application-offset ready">
+  <body class="application application-offset ready">
   <!-- Chat modal -->
   <!-- Customizer modal -->
   <!-- Application container -->
-  <div class="container-fluid container-application">
-    <!-- Sidenav -->
-    <div class="sidenav" id="sidenav-main">
-      <!-- Sidenav header -->
-      <div class="sidenav-header d-flex align-items-center">
-        <span class="navbar-brand text-white">Focushift</span>
-        <div class="ml-auto">
-          <!-- Sidenav toggler -->
-          <div class="sidenav-toggler sidenav-toggler-dark d-md-none" data-action="sidenav-unpin" data-target="#sidenav-main">
-            <div class="sidenav-toggler-inner">
-              <i class="sidenav-toggler-line bg-white"></i>
-              <i class="sidenav-toggler-line bg-white"></i>
-              <i class="sidenav-toggler-line bg-white"></i>
+    <div class="container-fluid container-application">
+      <!-- Sidenav -->
+      <div class="sidenav" id="sidenav-main">
+        <!-- Sidenav header -->
+        <div class="sidenav-header d-flex align-items-center">
+          <span class="navbar-brand text-white"><strong>Focushift</strong></span>
+          <div class="ml-auto">
+            <!-- Sidenav toggler -->
+            <div class="sidenav-toggler sidenav-toggler-dark d-md-none" data-action="sidenav-unpin" data-target="#sidenav-main">
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+                <i class="sidenav-toggler-line bg-white"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- User mini profile -->
-      <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
-        <!-- Avatar -->
-        <div>
-          <div class="mt-4">
-            <h5 class="mb-0 text-white">User Name</h5>
-            <span class="d-block text-sm text-white opacity-8 mb-3">User Title</span>
-            <a href="#" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
-            </a>
+        <!-- User mini profile -->
+        <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
+          <!-- Avatar -->
+          <div>
+            <div class="mt-4">
+              <h5 class="mb-0 text-white">User Name</h5>
+              <span class="d-block text-sm text-white opacity-8 mb-3">User Title</span>
+              <a href="#" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
+              </a>
+            </div>
           </div>
-        </div>
         <!-- Actions -->
         <div class="w-100 mt-4 actions d-flex justify-content-between">
           <a href="/app/application/user/profile.html" class="action-item action-item-lg text-white pl-0">
@@ -549,79 +547,100 @@
             </div>
           </div>
           <!-- Card body -->
-          <div class="card-body">
-            <div class="mb-5" id="card-list-1">
-              <div class="card card-progress border shadow-none">
-                <div class="card-body row align-items-center">
-                  <div class="col-sm-6">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck1">
-                      <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+          <div class="card">
+            <div class="card-wrapper p-3">
+              <div class="checklist" data-toggle="dragula">
+                <div class="card border draggable-item shadow-none">
+                  <div class="px-3 py-2 row align-items-center">
+                    <div class="col-10">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="check-item-2">
+                        <label class="custom-control-label h6 text-sm" for="check-item-2">Lunch meeting</label>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
-                    <div class="actions d-inline-block">
+                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
                       <div class="dropdown" data-toggle="dropdown">
                         <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="fas fa-ellipsis-h"></i>
                         </a>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">Edit task</a>
-                        <a href="#" class="dropdown-item">Delete task</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="#" class="dropdown-item">Refresh</a>
+                          <a href="#" class="dropdown-item">Manage Widgets</a>
+                          <a href="#" class="dropdown-item">Settings</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card border draggable-item shadow-none">
+                  <div class="px-3 py-2 row align-items-center">
+                    <div class="col-10">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="check-item-3">
+                        <label class="custom-control-label h6 text-sm" for="check-item-3">Webpixels website redesign</label>
+                      </div>
+                    </div>
+                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                      <div class="dropdown" data-toggle="dropdown">
+                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="#" class="dropdown-item">Refresh</a>
+                          <a href="#" class="dropdown-item">Manage Widgets</a>
+                          <a href="#" class="dropdown-item">Settings</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card border draggable-item shadow-none">
+                  <div class="px-3 py-2 row align-items-center">
+                    <div class="col-10">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="check-item-4">
+                        <label class="custom-control-label h6 text-sm" for="check-item-4">Dashboard cards</label>
+                      </div>
+                    </div>
+                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                      <div class="dropdown" data-toggle="dropdown">
+                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="#" class="dropdown-item">Refresh</a>
+                          <a href="#" class="dropdown-item">Manage Widgets</a>
+                          <a href="#" class="dropdown-item">Settings</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card border draggable-item shadow-none">
+                  <div class="px-3 py-2 row align-items-center">
+                    <div class="col-10">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="check-item-5">
+                        <label class="custom-control-label h6 text-sm" for="check-item-5">Call with Dave</label>
+                      </div>
+                    </div>
+                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                      <div class="dropdown" data-toggle="dropdown">
+                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="#" class="dropdown-item">Refresh</a>
+                          <a href="#" class="dropdown-item">Manage Widgets</a>
+                          <a href="#" class="dropdown-item">Settings</a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="mb-5" id="card-list-1">
-              <div class="card card-progress border shadow-none">
-                <div class="card-body row align-items-center">
-                  <div class="col-sm-6">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck2">
-                      <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
-                    </div>
-                  </div>
-                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
-                    <div class="actions d-inline-block">
-                      <div class="dropdown" data-toggle="dropdown">
-                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">Edit task</a>
-                        <a href="#" class="dropdown-item">Delete task</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mb-5" id="card-list-1">
-              <div class="card card-progress border shadow-none">
-                <div class="card-body row align-items-center">
-                  <div class="col-sm-6">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input" id="customCheck3">
-                      <label class="custom-control-label" for="customCheck3">Check this custom checkbox</label>
-                    </div>
-                  </div>
-                  <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
-                    <div class="actions d-inline-block">
-                      <div class="dropdown" data-toggle="dropdown">
-                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">Edit task</a>
-                        <a href="#" class="dropdown-item">Delete task</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
               <!-- Empty container -->
               <span class="empty-container" data-placeholder="Empty"></span>
             </div>
@@ -646,11 +665,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
   <!-- Scripts -->
   <!-- Core JS - includes jquery, bootstrap, popper, in-view and sticky-kit -->
    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</body>
   </body>
 </html>
