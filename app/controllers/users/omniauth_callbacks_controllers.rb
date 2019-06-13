@@ -11,4 +11,3 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to '/'
     end
   end
-end
