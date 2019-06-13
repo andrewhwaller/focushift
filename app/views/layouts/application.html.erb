@@ -13,72 +13,7 @@
   <!-- Application container -->
     <div class="container-fluid container-application">
       <!-- Sidenav -->
-      <div class="sidenav" id="sidenav-main">
-        <!-- Sidenav header -->
-        <div class="sidenav-header d-flex align-items-center">
-          <a href="#" class="navbar-brand align-text-top"><h2 class="text-white"><i class="fas fa-glasses"></i> Focushift</h2></a>
-          <div class="ml-auto">
-            <!-- Sidenav toggler -->
-            <div class="sidenav-toggler sidenav-toggler-dark d-md-none" data-action="sidenav-unpin" data-target="#sidenav-main">
-              <div class="sidenav-toggler-inner">
-                <i class="sidenav-toggler-line bg-white"></i>
-                <i class="sidenav-toggler-line bg-white"></i>
-                <i class="sidenav-toggler-line bg-white"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- User mini profile -->
-        <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
-          <!-- Avatar -->
-          <div>
-            <div class="mt-4">
-              <h5 class="mb-0 text-white">Andrew Waller</h5>
-              <span class="d-block text-sm text-white opacity-8 mb-3">User Title</span>
-              <a href="#" class="btn btn-sm btn-white btn-icon rounded-pill shadow hover-translate-y-n3">
-              </a>
-            </div>
-          </div>
-        <!-- Actions -->
-        <div class="w-100 mt-4 actions d-flex justify-content-between">
-          <a href="/app/application/user/profile.html" class="action-item action-item-lg text-white pl-0">
-            <i class="fas fa-user"></i>
-          </a>
-          <a href="#modal-chat" class="action-item action-item-lg text-white" data-toggle="modal">
-            <i class="fas fa-comment-alt"></i>
-          </a>
-          <a href="/app/application/shop/invoices.html" class="action-item action-item-lg text-white pr-0">
-            <i class="fas fa-receipt"></i>
-          </a>
-        </div>
-      </div>
-      <!-- Application nav -->
-      <div class="nav-application clearfix">
-        <a href="/app/application/home.html" class="btn btn-square text-sm active">
-          <span class="btn-inner--icon d-block"><i class="fas fa-home fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Home</span>
-        </a>
-        <a href="/app/application/project/card-listing.html" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-inbox fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Inbox</span>
-        </a>
-        <a href="/app/application/task/table-listing.html" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-map-marker-alt fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Contexts</span>
-        </a>
-        <a href="/app/application/task/kanban-board.html" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-tasks fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Projects</span>
-        </a>
-        <a href="/app/application/user/card-listing.html" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-hands-helping fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Partners</span>
-        </a>
-        <a href="/app/application/widgets.html" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-camera-retro fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Bokeh Mode</span>
-        </a>
-      </div>
+      <%= render 'side_nav' %>
       <!-- Misc area -->
     </div>
     <!-- Content -->
