@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, :timeoutable, :omniauthable
 
+  has_many :tasks
+
   def self.from_omniauth(auth)
   # Either create a User record or update it based on the provider (Google) and the UID   
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
