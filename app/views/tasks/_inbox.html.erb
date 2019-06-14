@@ -71,7 +71,7 @@
               <div class="form-group">
                 <%= form_for(@task) do |f| %>
                   <%= f.text_field :name, :class => "form-control form-control-flush", :placeholder => "Click here and start typing to create a new inbox item...", autocomplete: 'off' %>
-                  <%= f.submit :display => "display: none" %>
+                  <%= f.submit :style => "display: none;" %>
                 <% end %>
               </div>
               <div class="checklist" data-toggle="dragula">
@@ -79,9 +79,12 @@
                 <div class="card border draggable-item shadow-none">
                   <div class="px-3 py-2 row align-items-center">
                     <div class="col-10">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="<%= task.id %>">
-                        <label class="custom-control-label h6 text-sm" for="<%= task.id %>"><%= link_to task.name, task_path(task) %></label>
+                      <%= form_for(task) do |f| %>
+                        <div class="custom-control custom-checkbox">
+                          <%= f.check_box :complete, :class => "custom-control-input toggle", :id => task.id, :checked => (true if task.complete?) %>
+                      <% end %>
+                          <label class="custom-control-label h6 text-sm" for="<%= task.id %>"><%= link_to task.name, task_path(task) %></label>
+                      
                       </div>
                     </div>
                     <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">

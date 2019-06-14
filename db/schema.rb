@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_06_14_212510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.boolean "complete"
+    t.boolean "complete", default: false
   end
 
   create_table "users", force: :cascade do |t|
