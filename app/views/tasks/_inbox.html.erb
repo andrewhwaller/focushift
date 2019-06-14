@@ -69,15 +69,19 @@
           <div class="card">
             <div class="card-wrapper p-3">
               <div class="form-group">
-                <input type="text" class="form-control form-control-flush" placeholder="Start typing to create a new inbox item...">
+                <%= form_for(@task) do |f| %>
+                  <%= f.text_field :name, :class => "form-control form-control-flush", :placeholder => "Click here and start typing to create a new inbox item...", autocomplete: 'off' %>
+                  <%= f.submit :display => "display: none" %>
+                <% end %>
               </div>
               <div class="checklist" data-toggle="dragula">
+              <% @tasks.each do |task| %>
                 <div class="card border draggable-item shadow-none">
                   <div class="px-3 py-2 row align-items-center">
                     <div class="col-10">
                       <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="check-item-2">
-                        <label class="custom-control-label h6 text-sm" for="check-item-2">Lunch meeting</label>
+                        <input type="checkbox" class="custom-control-input" id="<%= task.id %>">
+                        <label class="custom-control-label h6 text-sm" for="<%= task.id %>"><%= link_to task.name, task_path(task) %></label>
                       </div>
                     </div>
                     <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
@@ -86,88 +90,14 @@
                           <i class="fas fa-ellipsis-h"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a href="#" class="dropdown-item">Refresh</a>
-                          <a href="#" class="dropdown-item">Manage Widgets</a>
-                          <a href="#" class="dropdown-item">Settings</a>
+                          <a href="#" class="dropdown-item">Edit</a>
+                          <a href="#" class="dropdown-item">Delete</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="card border draggable-item shadow-none">
-                  <div class="px-3 py-2 row align-items-center">
-                    <div class="col-10">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="check-item-3">
-                        <label class="custom-control-label h6 text-sm" for="check-item-3">Webpixels website redesign</label>
-                      </div>
-                    </div>
-                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
-                      <div class="dropdown" data-toggle="dropdown">
-                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a href="#" class="dropdown-item">Refresh</a>
-                          <a href="#" class="dropdown-item">Manage Widgets</a>
-                          <a href="#" class="dropdown-item">Settings</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card border draggable-item shadow-none">
-                  <div class="px-3 py-2 row align-items-center">
-                    <div class="col-10">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="check-item-4">
-                        <label class="custom-control-label h6 text-sm" for="check-item-4">Dashboard cards</label>
-                      </div>
-                    </div>
-                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
-                      <div class="dropdown" data-toggle="dropdown">
-                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a href="#" class="dropdown-item">Refresh</a>
-                          <a href="#" class="dropdown-item">Manage Widgets</a>
-                          <a href="#" class="dropdown-item">Settings</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card border draggable-item shadow-none">
-                  <div class="px-3 py-2 row align-items-center">
-                    <div class="col-10">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="check-item-5">
-                        <label class="custom-control-label h6 text-sm" for="check-item-5">Call with Dave</label>
-                      </div>
-                    </div>
-                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
-                      <div class="actions d-inline-block">
-                        <div class="action-item mr-2">
-                          <i class="fas fa-trash-alt mr-2"></i>
-                        </div>
-                        <div class="action-item mr-2">
-                          <i class="fas fa-edit mr-2"></i>
-                        </div>
-                      </div>
-                      <div class="dropdown" data-toggle="dropdown">
-                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a href="#" class="dropdown-item">Refresh</a>
-                          <a href="#" class="dropdown-item">Manage Widgets</a>
-                          <a href="#" class="dropdown-item">Settings</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <% end %>
               </div>
             </div>
           </div>
