@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   
   def index
     @task = Task.new
-    @tasks = current_user.tasks.all
+    @tasks = current_user.tasks.all.where("status = '0'")
   end
 
   def show
