@@ -49,13 +49,12 @@
                       </div>
                     <% end %>
                     <div class="mt-4">
-                      <span class="btn-inner--icon">
-                        <%= button_tag(type: "submit", class: "btn btn-sm btn-primary btn-icon rounded-pill") do %>
-                          <span>Log in <i class="fas fa-long-arrow-alt-right"></i></span>
-                        <% end %> 
-                      </span>
+                      <%= button_tag(type: "submit", class: "btn btn-sm btn-primary btn-icon rounded-pill") do %>
+                        <span class="btn-inner--text">Log in</span> 
+                        <span class="btn-inner--icon"><i class="fas fa-long-arrow-alt-right"></i></span>
+                      <% end %> 
                     </div>
-                <% end %>
+                  <% end %>
                 </div>
                 <div class="card-footer px-md-5">
                   <%= render "users/shared/links", :class => "small font-weight-bold" %>
