@@ -25,7 +25,7 @@
                       <div class="form-group mb-4">
                         <%= f.label :password, :class => "form-control-label" %>
                         <% if @minimum_password_length %>
-                          <em>(<%= @minimum_password_length %> characters minimum)</em>
+                          <em><small>(<%= @minimum_password_length %> characters minimum)</small></em>
                         <% end %><br />
                         <div class="input-group input-group-merge">
                           <div class="input-group-prepend">
@@ -57,7 +57,7 @@
                       <% end %>
                     </div>
                   <% end %>
-                  <br><%= render "devise/shared/links" %>
+                  <br><small>Already have an account? <%= render "devise/shared/links" %></small>
                 </div>  
               </div>
             </div>
