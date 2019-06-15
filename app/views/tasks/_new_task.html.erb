@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-      <%= form_for :task do |f| %>
+      <%= form_for(Task.new) do |f| %>
         <!-- Task name -->
         <div class="form-group">
           <label class="form-control-label">Task name</label>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", data: {dismiss: "modal"}, value: "Save" %>
+        <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
         <button type="button" class="btn btn-sm btn-link text-danger px-2">Cancel</button>
       <% end %>
       </div>

@@ -13,9 +13,11 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.user_id = current_user.id
-    @task.save
-
-    redirect_to '/'
+    if @task.save
+      redirect_to '/'
+    else 
+      raise params.inspect
+    end
   end
 
   def update
@@ -26,6 +28,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :status)
+    params.require(:task).permit!
   end
 end
