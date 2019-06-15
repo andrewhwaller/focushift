@@ -50,8 +50,10 @@
                     <% end %>
                     <div class="mt-4">
                       <span class="btn-inner--icon">
-                        <%= f.submit "Log in", :class => "btn btn-sm btn-primary btn-icon rounded-pill" %>
-                      <i class="fas fa-long-arrow-alt-right"></i></span>
+                        <%= button_tag(type: "submit", class: "btn btn-sm btn-primary btn-icon rounded-pill") do %>
+                          <span>Log in <i class="fas fa-long-arrow-alt-right"></i></span>
+                        <% end %> 
+                      </span>
                     </div>
                 <% end %>
                 </div>
