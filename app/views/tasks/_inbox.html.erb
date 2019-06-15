@@ -81,7 +81,7 @@
                     <div class="col-10">
                       <%= form_for(task) do |f| %>
                         <div class="custom-control custom-checkbox">
-                          <%= f.check_box :complete, :class => "custom-control-input toggle", :id => task.id, :checked => (true if task.complete?) %>
+                          <%= f.check_box :status, :class => "custom-control-input toggle", :id => task.id, :value => true %>
                       <% end %>
                           <label class="custom-control-label h6 text-sm" for="<%= task.id %>"><%= link_to task.name, task_path(task) %></label>
                       
