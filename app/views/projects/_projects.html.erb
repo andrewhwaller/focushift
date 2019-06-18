@@ -1,0 +1,111 @@
+<div class="page-content">
+        <%= render 'new_task' %>
+        <!-- Page title -->
+        <div class="page-title">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <h5 class="h3 font-weight-400 mb-0 text-white">Good morning, Andrew!</h5>
+              <span class="text-sm text-white opacity-8">Let's get things done!</span>
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
+            <!-- New task modal button -->
+              <a href="#modal-task-create" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4" data-toggle="modal">
+                <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-toggle="dragula" data-containers='["card-list-1", "card-list-2", "card-list-3"]'>
+          <!-- Card header -->
+          <div class="card-header actions-toolbar">
+            <div class="actions-search" id="actions-search">
+              <div class="input-group input-group-merge input-group-flush">
+                <div class="input-group-prepend">
+                  <span class="input-group-text bg-transparent"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control form-control-flush" placeholder="Type and hit enter ...">
+                <div class="input-group-append">
+                  <a href="#" class="input-group-text bg-transparent" data-action="search-close" data-target="#actions-search"><i class="fas fa-times"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+              <div class="col">
+                <h6 class="d-inline-block mb-0"><i class="fas fa-inbox"></i> Projects</h6>
+              </div>
+              <div class="col text-right">
+                <div class="actions"><a href="#" class="action-item mr-3" data-action="search-open" data-target="#actions-search"><i class="fas fa-search"></i></a>
+                  <div class="dropdown mr-3">
+                    <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-filter"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-sort-amount-down"></i>Newest
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-sort-alpha-down"></i>From A-Z
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <i class="fas fa-sort-alpha-up"></i>From Z-A
+                      </a>
+                    </div>
+                  </div>
+                  <div class="dropdown" data-toggle="dropdown">
+                    <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a href="#" class="dropdown-item">Refresh</a>
+                      <a href="#" class="dropdown-item">Manage Widgets</a>
+                      <a href="#" class="dropdown-item">Settings</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card body -->
+          <div class="card">
+            <div class="card-wrapper p-3">
+              <div class="form-group">
+                <%= form_for(@task) do |f| %>
+                  <%= f.text_field :name, :class => "form-control form-control-flush", :placeholder => "Click here and start typing to create a new inbox item...", autocomplete: 'off' %>
+                  <%= f.submit :style => "display: none;" %>
+                <% end %>
+              </div>
+              <div class="checklist" data-toggle="dragula">
+              <% @tasks.each do |task| %>
+                <div class="card border draggable-item shadow-none">
+                  <div class="px-3 py-2 row align-items-center">
+                    <div class="col-10">
+                      <%= form_for(task) do |f| %>
+                        <div class="custom-control custom-checkbox">
+                          <%= f.check_box :status, :class => "custom-control-input toggle", :id => task.id, :value => true %>
+                      <% end %>
+                          <label class="custom-control-label h6 text-sm" for="<%= task.id %>"><%= link_to task.name, task_path(task) %></label>
+                      </div>
+                    </div>
+                    <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
+                      <div class="dropdown" data-toggle="dropdown">
+                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a href="#" class="dropdown-item">Edit</a>
+                          <a href="#" class="dropdown-item">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+              <!-- Empty container -->
+              <span class="empty-container" data-placeholder="Empty"></span>
+            </div>
+          </div>
+        </div>
+      </div>
