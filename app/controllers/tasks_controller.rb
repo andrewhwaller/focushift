@@ -15,8 +15,6 @@ class TasksController < ApplicationController
     @task.user_id = current_user.id
     if @task.save
       redirect_to '/'
-    else 
-      raise params.inspect
     end
   end
 
