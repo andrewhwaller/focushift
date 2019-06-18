@@ -14212,7 +14212,7 @@ button.bg-black:hover {
 
 .faded-bottom:after,
 .faded-top:after {
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#a6000000", GradientType=0)
+    /* filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#a6000000", GradientType=0) */
 }
 
 .faded-bottom:after {
@@ -27282,7 +27282,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .scrollbar-inner>.scroll-element .scroll-bar,
 .scrollbar-inner>.scroll-element .scroll-element_track {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; */
     filter: alpha(opacity=40);
     opacity: .4
 }
@@ -27446,7 +27446,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .scrollbar-macosx>.scroll-element .scroll-bar {
     background-color: #6c6e71;
     display: block;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; */
     filter: alpha(opacity=0);
     opacity: 0;
     border-radius: 7px;
@@ -27456,7 +27456,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .scrollbar-macosx:hover>.scroll-element .scroll-bar,
 .scrollbar-macosx>.scroll-element.scroll-draggable .scroll-bar {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; */
     filter: alpha(opacity=70);
     opacity: .7
 }
@@ -27854,7 +27854,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .scrollbar-dynamic>.scroll-element.scroll-draggable .scroll-element_outer,
 .scrollbar-dynamic>.scroll-element:hover .scroll-element_outer {
     overflow: hidden;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; */
     filter: alpha(opacity=70);
     opacity: .7
 }
