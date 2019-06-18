@@ -8,8 +8,8 @@
               <span class="text-sm text-white opacity-8">Let's get things done!</span>
             </div>
             <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
-            <!-- New task modal button -->
-              <a href="#modal-task-create" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4" data-toggle="modal">
+            <!-- New project modal button -->
+              <a href="#modal-project-create" class="btn btn-sm btn-white btn-icon-only rounded-circle ml-4" data-toggle="modal">
                 <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
               </a>
             </div>
@@ -69,21 +69,21 @@
           <div class="card">
             <div class="card-wrapper p-3">
               <div class="form-group">
-                <%= form_for(@task) do |f| %>
+                <%= form_for(@project) do |f| %>
                   <%= f.text_field :name, :class => "form-control form-control-flush", :placeholder => "Click here and start typing to create a new inbox item...", autocomplete: 'off' %>
                   <%= f.submit :style => "display: none;" %>
                 <% end %>
               </div>
               <div class="checklist" data-toggle="dragula">
-              <% @tasks.each do |task| %>
+              <% @projects.each do |project| %>
                 <div class="card border draggable-item shadow-none">
                   <div class="px-3 py-2 row align-items-center">
                     <div class="col-10">
-                      <%= form_for(task) do |f| %>
+                      <%= form_for(project) do |f| %>
                         <div class="custom-control custom-checkbox">
-                          <%= f.check_box :status, :class => "custom-control-input toggle", :id => task.id, :value => true %>
+                          <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true %>
                       <% end %>
-                          <label class="custom-control-label h6 text-sm" for="<%= task.id %>"><%= link_to task.name, task_path(task) %></label>
+                          <label class="custom-control-label h6 text-sm" for="<%= project.id %>"><%= link_to project.name, project_path(project) %></label>
                       </div>
                     </div>
                     <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">

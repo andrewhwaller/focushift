@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_active_user!
+  before_action :set_active_user
   
   def index
     @project = Project.new

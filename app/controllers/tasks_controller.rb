@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_active_user!
+  before_action :set_active_user
   
   def index
     @task = Task.new
