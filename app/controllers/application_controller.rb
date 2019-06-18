@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
 
   def require_logged_in
   end
+
+  def set_active_user
+    @active_user = current_user
+  end
 end
