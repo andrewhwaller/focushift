@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-      <%= form_for(Task.new) do |f| %>
+      <%= form_for(Project.new) do |f| %>
         <!-- Task name -->
         <div class="form-group">
           <label class="form-control-label">Project name</label>
@@ -10,7 +10,7 @@
         </div>
         <!-- Task description -->
         <div class="form-group">
-          <label class="form-control-label mb-0">Task description</label>
+          <label class="form-control-label mb-0">Project description</label>
           <small class="form-text text-muted mb-2 mt-0">This textarea will autosize while you type</small>
           <%= f.text_area :description, :class => "form-control", data: {toggle: "autosize"}, rows: "1", autocomplete: 'off' %>
         </div>
@@ -19,15 +19,9 @@
           <label class="form-control-label">Contexts</label>
           <input type="text" class="form-control" value="" data-toggle="tags" placeholder="Type here..." />
         </div>
-        <!-- Context tags -->
-        <div class="form-group">
-          <label class="form-control-label">Project</label>
-          <input type="text" class="form-control" value="" data-toggle="tags" placeholder="Type here..." />
-        </div>
         <!-- Due date -->
         <div class="form-group">
           <label class="form-control-label">Due date</label>
-           
            <%= f.text_field :due_date, :class => "form-control", data: {toggle: "datetime"}, placeholder: "Select date and time" %>
         </div>
       </div>
