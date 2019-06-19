@@ -17,7 +17,7 @@
             <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             </a>
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow">
-              <h6 class="dropdown-header px-0">Hi, <%=current_user.first_name%>!</h6>
+              <h6 class="dropdown-header px-0">Hi, <%= @active_user.first_name %>!</h6>
               <a href="/app/application/user/profile.html" class="dropdown-item">
                 <i class="fas fa-user"></i>
                 <span>My profile</span>
