@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :user
-  belongs_to :project
+  has_one :project, :class_name => 'Project', :foreign_key => 'project_id'
   
   validates :name, :presence => true
 
