@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def user_full_name
-    # @user_full_name = (current_user.first_name + " " + current_user.last_name)
+    @user_full_name = (current_user.first_name + " " + current_user.last_name)
   end
 end
