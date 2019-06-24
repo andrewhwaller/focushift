@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.8.1'
 gem 'animate-rails', '~> 1.0', '>= 1.0.10'
+gem 'bootstrap', '~> 4.3.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
