@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   
   def index
     @task = Task.new
-    @tasks = current_user.tasks.all.where("status = '0'")
+    @tasks = current_user.tasks.where({status: "0", project_id: nil})
   end
 
   def show
