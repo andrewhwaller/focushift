@@ -16,6 +16,11 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+    <div class="container-fluid container-application">
+      <!-- Sidenav -->
+      <%= render 'layouts/side_nav' %>
+      <!-- Misc area -->
+    </div>
     
     <%= yield %>
 
