@@ -23,6 +23,12 @@
         <div class="form-group">
           <label class="form-control-label">Project</label>
           <input type="text" class="form-control" value="" data-toggle="tags" placeholder="Type here..." />
+          <select class="custom-select form-control" name="project_id" id="task[project_id]" value="Select a project">
+            <% @project_options = @active_user.projects.all %>
+            <% @project_options.each do |project| %>
+              <option value="<%= project.id %>"><%= project.name %></option>
+            <%end%>
+          </select>
         </div>
         <!-- Due date -->
         <div class="form-group">
