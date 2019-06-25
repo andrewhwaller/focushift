@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user_id = current_user.id
     if @project.save
-      redirect_to 'projects#index'
+      redirect_to '/projects#index'
     else 
       raise params.inspect
     end
