@@ -26,6 +26,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    respond_modal_with @task
   end
 
   def edit
@@ -36,6 +37,12 @@ class TasksController < ApplicationController
   def update
     raise params.inspect
     # @task.update(task_params)
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path
   end
 
   private

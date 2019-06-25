@@ -71,8 +71,8 @@
                           <i class="fas fa-ellipsis-h"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a href="#" class="dropdown-item">Delete</a>
-                          <%= link_to 'Edit Task', edit_task_path(task), class: 'dropdown-item', data: { modal: true } %>
+                          <%= button_to 'Delete task', task_path(task), class: 'dropdown-item', method: :delete, data: { confirm: "Are you sure?" } %>
+                          <%= link_to 'Edit task', edit_task_path(task), class: 'dropdown-item', data: { modal: true } %>
                           </a>
                         </div>
                       </div>
