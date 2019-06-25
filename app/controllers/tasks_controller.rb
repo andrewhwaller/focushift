@@ -22,6 +22,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    raise params.inspect
     @task = Task.find(params[:id])
   end
 
