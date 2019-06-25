@@ -1,14 +1,17 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_active_user
+
+  respond_to :html, :json
   
   def index
     @task = Task.new
     @tasks = current_user.tasks.where({status: "0", project_id: nil})
   end
 
-  def show
-    @task = Task.find(params[:id])
+  def new
+    @task = Task.new
+    respond_modal_with @task
   end
 
   def create
@@ -21,9 +24,13 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    raise params.inspect
+  def show
     @task = Task.find(params[:id])
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+    render 'edit_task'
   end
 
   def update
