@@ -11,7 +11,6 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
-    respond_modal_with @task
   end
 
   def create
