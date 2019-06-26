@@ -9,12 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="application application-offset ready">
+  <% if user_signed_in? %>
     <div class="container-fluid container-application">
-      <!-- Sidenav -->
       <%= render 'layouts/side_nav' %>
-      <!-- Misc area -->
     </div>
-    <div id="modal-holder"></div>
     <div class="main-content position-relative">
       <%= render 'layouts/main_nav' %>
       <div class="page-content">
@@ -26,6 +24,7 @@
             </div>
           </div>
         </div>
+    <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
   </body>
