@@ -22,7 +22,9 @@
       <!-- Misc area -->
     </div>
     <div id="modal-holder"></div>
-    <%= yield %>
-
+    <div class="main-content position-relative">
+      <%= render 'layouts/main_nav' %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
   </body>
 </html>
