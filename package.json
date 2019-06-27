@@ -2,4 +2,8 @@
   "name": "focushift",
   "private": true,
   "dependencies": {}
+  "scripts": {
+    "start": "rails s",
+    "test":
+  }
 }
