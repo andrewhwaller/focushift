@@ -1,8 +1,8 @@
-<div class="sidenav" id="sidenav-main">
+<div class="sidenav mb-2" id="sidenav-main">
         <!-- Sidenav header -->
         <div class="sidenav-header d-flex align-content-top">
           <a href="#" class="navbar-brand">
-            <%= image_tag("target_flat.svg", :class => "navbar-brand-img",:alt => "target logo") %> <span class="text-white">focushift</span>
+            <%= image_tag("target_flat.svg", :class => "navbar-brand-img",:alt => "target logo") %> <span class="text-white navbar-brand-text">focushift</span>
           </a>
           <div class="ml-auto">
             <!-- Sidenav toggler -->
@@ -17,15 +17,12 @@
         </div>
         <!-- User mini profile -->
         <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
-          <!-- Avatar -->
           <div>
             <div class="mt-4">
               <h5 class="mb-0 text-white"><%= @user_full_name %></h5>
             </div>
           </div>
-        <!-- Actions -->
         </div>
-      <!-- Application nav -->
       <div class="nav-application clearfix">
         <a href="/" class="btn btn-square text-sm active">
           <span class="btn-inner--icon d-block"><i class="fas fa-home fa-2x"></i></span>
