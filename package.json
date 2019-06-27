@@ -1,9 +1,10 @@
 {
   "name": "focushift",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
   "scripts": {
     "start": "rails s",
-    "test":
+    "install": "",
+    "test": "yarn test"
   }
 }
