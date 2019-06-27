@@ -43,7 +43,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                           <%= button_to 'Delete task', task_path(task), class: 'dropdown-item', method: :delete, data: { confirm: "Are you sure?" } %>
-                          <%= link_to 'Edit task', edit_task_path(task), class: 'dropdown-item', data: { modal: true } %>
+                          <%= link_to 'Edit task', edit_task_path(task), class: 'dropdown-item' %>
                           </a>
                         </div>
                       </div>

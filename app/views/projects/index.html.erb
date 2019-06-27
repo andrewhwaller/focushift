@@ -52,8 +52,8 @@
                           <i class="fas fa-ellipsis-h"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a href="#" class="dropdown-item">Edit</a>
-                          <a href="#" class="dropdown-item">Delete</a>
+                          <%= button_to 'Delete project', project_path(project), class: 'dropdown-item', method: :delete, data: { confirm: "Are you sure?" } %>
+                          <%= link_to 'Edit project', edit_project_path(project), class: 'dropdown-item' %>
                         </div>
                       </div>
                     </div>
