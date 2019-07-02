@@ -7,6 +7,10 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks.where({status: "0", project_id: nil})
   end
 
+  def show
+    @task = Task.find(params[:id])
+  end
+
   def new
     @task = Task.new
   end
@@ -15,14 +19,10 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     if @task.save
-      redirect_to '/'
+      redirect_to tasks_path
     else 
       raise params.inspect
     end
-  end
-
-  def show
-    @task = Task.find(params[:id])
   end
 
   def edit
@@ -32,7 +32,6 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    # raise params.inspect
     redirect_to tasks_path
   end
 

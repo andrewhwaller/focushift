@@ -11,6 +11,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def new
+    @project = Project.new
+  end
+
   def create
     @project = Project.new(project_params)
     @project.user_id = current_user.id
@@ -19,6 +23,10 @@ class ProjectsController < ApplicationController
     else
       raise params.inspect
     end
+  end
+
+  def edit
+    @project = Project.find(params[:id])
   end
 
   def update
