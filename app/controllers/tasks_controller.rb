@@ -1,8 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_active_user
-
-  respond_to :html, :json
   
   def index
     @task = Task.new
@@ -25,7 +23,6 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    respond_modal_with @task
   end
 
   def edit
