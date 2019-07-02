@@ -27,12 +27,13 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
-    render 'edit_task'
   end
 
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+    # raise params.inspect
+    redirect_to tasks_path
   end
 
   def destroy

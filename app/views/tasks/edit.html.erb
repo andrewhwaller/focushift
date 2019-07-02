@@ -37,8 +37,8 @@
           <%= f.text_field :due_date, :class => "form-control", data: {toggle: "datetime"}, placeholder: "Select date and time" %>
         </div>
       </div>
-      <div class="modal-footer">
-        <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
+      <div class="card-footer">
+        <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto", value: "Save" %>
         <%= link_to 'Cancel', tasks_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
       </div>
     </div>

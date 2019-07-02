@@ -34,18 +34,18 @@
                       </div>
                     </div>
                     <div class="card-meta d-inline-flex align-items-center ml-sm-auto">
-                      <div class="action-item mr-2">
+                      <div class="mr-2">
                         <%= task.due_date %>
                       </div>
-                      <div class="dropdown" data-toggle="dropdown">
-                        <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <%= button_to 'Delete task', task_path(task), class: 'dropdown-item', method: :delete, data: { confirm: "Are you sure?" } %>
-                          <%= link_to 'Edit task', edit_task_path(task), class: 'dropdown-item' %>
-                          </a>
-                        </div>
+                      <div class="mr-2">
+                        <%= link_to edit_task_path(task), :class => "action-item" do %>
+                          <i class="fas fa-edit"></i>
+                        <% end %>
+                      </div>
+                      <div class="mr-2">
+                        <%= button_to task_path(task), :method => :delete, :class => "action-item" do %>
+                          <i class="fas fa-trash-alt"></i>
+                        <% end %>
                       </div>
                     </div>
                   </div>
