@@ -12,7 +12,7 @@ class ContextsController < ApplicationController
   end
 
   def new
-    @context = context.new
+    @context = Context.new
   end
 
   def create
