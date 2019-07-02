@@ -5,6 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable, :timeoutable, :omniauthable
   has_many :tasks
   has_many :projects
+  has_many :contexts
 
   def self.from_omniauth(auth)
   # Either create a User record or update it based on the provider (Google) and the UID   

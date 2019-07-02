@@ -4,7 +4,7 @@ class ContextsController < ApplicationController
   
   def index
     @context = Context.new
-    @contexts = current_user.contexts.all.where("status = '0'")
+    @contexts = current_user.contexts.all
   end
 
   def show
@@ -12,7 +12,7 @@ class ContextsController < ApplicationController
   end
 
   def new
-    @context = Context.new
+    @context = context.new
   end
 
   def create
@@ -20,7 +20,7 @@ class ContextsController < ApplicationController
     @context.user_id = current_user.id
     if @context.save
       redirect_to contexts_path
-    else
+    else 
       raise params.inspect
     end
   end
