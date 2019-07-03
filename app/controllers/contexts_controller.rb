@@ -18,11 +18,8 @@ class ContextsController < ApplicationController
   def create
     @context = Context.new(context_params)
     @context.user_id = current_user.id
-    if @context.save
-      redirect_to contexts_path
-    else 
-      raise params.inspect
-    end
+    @context.save
+    redirect_to contexts_path
   end
 
   def edit

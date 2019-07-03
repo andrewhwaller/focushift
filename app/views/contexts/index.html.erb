@@ -12,12 +12,11 @@
     </div>
   </div>
   <div class="card-wrapper p-3">
-    <div class="checklist">
       <% @contexts.each do |context| %>
       <div class="card border">
         <div class="px-3 py-2 row align-items-center">
           <div class="col-10">
-            <label class="custom-control-label h6 text-sm" for="<%= context.id %>">
+            <label class="h6 text-sm" for="<%= context.id %>">
               <%= link_to context.name, context_path(context) %>
             </label>
           </div>
@@ -36,6 +35,5 @@
         </div>
       </div>
       <% end %>
-    </div>
   </div>
 </div>
