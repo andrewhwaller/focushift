@@ -1,4 +1,4 @@
 class Context < ApplicationRecord
   belongs_to :user
-  has_many :projects
+  has_and_belongs_to_many :projects
 end
