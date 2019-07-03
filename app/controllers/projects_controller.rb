@@ -18,11 +18,8 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user_id = current_user.id
-    if @project.save
-      redirect_to projects_path
-    else
-      raise params.inspect
-    end
+    @project.save
+    redirect_to projects_path
   end
 
   def edit
