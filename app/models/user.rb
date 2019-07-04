@@ -6,8 +6,10 @@ class User < ApplicationRecord
   has_many :tasks
   has_many :projects
   has_many :contexts
+  has_many :partnerships
   has_many :users, through: :partnerships
   has_many :projects, through: :partnerships
+  
 
   def self.from_omniauth(auth)
   # Either create a User record or update it based on the provider (Google) and the UID   
