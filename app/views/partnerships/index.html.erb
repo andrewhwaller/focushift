@@ -2,10 +2,10 @@
   <div class="card-header actions-toolbar">
     <div class="row justify-content-between align-items-center">
       <div class="col">
-        <h6 class="d-inline-block mb-0"><i class="fas fa-tasks"></i> Projects</h6>
+        <h6 class="d-inline-block mb-0"><i class="fas fa-hands-helping"></i> Partnerships</h6>
       </div>
       <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
-        <%= link_to new_project_path, class: 'btn btn-sm btn-success btn-icon-only rounded-circle' do %>
+        <%= link_to new_partnership_path, class: 'btn btn-sm btn-success btn-icon-only rounded-circle' do %>
           <i class="fas fa-plus"></i>
         <% end %>
       </div>
@@ -13,20 +13,20 @@
   </div>
   <div class="card-wrapper p-3">
     <span>
-      <% if @projects.empty? %>
-        <%= "Time to create a new project! Use the + button to get started." %>
+      <% if @partnerships.empty? %>
+        <%= "Time to create a new partnership! Use the + button to get started." %>
       <% end %>
     </span>
     <div class="checklist">
-      <% @projects.each do |project| %>
+      <% @partnerships.each do |partnership| %>
       <div class="card border shadow-none">
         <div class="px-3 py-2 row align-items-center">
           <div class="col-10">
-            <%= form_for(project) do |f| %>
+            <%= form_for(partnership) do |f| %>
             <div class="custom-control custom-checkbox">
-              <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true %>
+              <%= f.check_box :status, :class => "custom-control-input toggle", :id => partnership.id, :value => true %>
             <% end %>
-              <label class="custom-control-label h6 text-sm" for="<%= project.id %>"><%= link_to project.name, project_path(project) %></label>
+              <label class="custom-control-label h6 text-sm" for="<%= partnership.id %>"><%= link_to partnership.name, partnership_path(partnership) %></label>
             </div>
           </div>
           <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
@@ -34,17 +34,17 @@
               <div class="mr-2">
                 <span>
                   <i class="far fa-check-circle mr-2"></i>
-                  <%= project.tasks.count %> tasks
+                  <%= partnership.tasks.count %> tasks
                 </span>
               </div>
             </div>
             <div class="mr-2">
-              <%= link_to edit_project_path(project), :class => "action-item" do %>
+              <%= link_to edit_partnership_path(partnership), :class => "action-item" do %>
                 <i class="fas fa-edit"></i>
               <% end %>
             </div>
             <div class="mr-2">
-              <%= button_to project_path(project), :method => :delete, :class => "action-item" do %>
+              <%= button_to partnership_path(partnership), :method => :delete, :class => "action-item" do %>
                 <i class="fas fa-trash-alt"></i>
               <% end %>
             </div>
