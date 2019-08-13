@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :projects
   has_many :contexts
   has_many :partnerships
-  has_many :users, through: :partnerships
+  has_many :partners, through: :partnerships
   has_many :projects, through: :partnerships
   
 
