@@ -39,10 +39,32 @@
               <%= image_tag("target_flat.svg", :class => "navbar-brand-img",:alt => "target logo") %> <span class="text-white">focushift</span>
             </a>              
             <!-- Application menu -->
-            <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Menu
+            <li class="nav-item" data-toggle="hover">
+              <a href="/" class="nav-link">
+                <span><i class="fas fa-home"></i>Home</span>
               </a>
+            </li>
+            <li class="nav-item" data-toggle="hover">            
+              <a href="/tasks" class="nav-link">
+                <span><i class="fas fa-inbox"></i>Inbox</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="hover">
+              <a href="/contexts" class="nav-link">
+                <span><i class="fas fa-map-marker-alt"></i>Contexts</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="hover">
+              <a href="/projects" class="nav-link">
+                <span class="btn-inner--icon d-block"><i class="fas fa-tasks"></i>Projects</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="hover">
+              <a href="/partnerships" class="nav-link">
+                <span class="btn-inner--icon d-block"><i class="fas fa-hands-helping"></i>Partnerships</span>
+              </a>
+            </li>
+          </ul>
               <div class="dropdown-menu dropdown-menu-arrow p-lg-0">
                 <!-- Top dropdown menu -->
                 <div class="p-lg-4">
