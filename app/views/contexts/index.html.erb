@@ -12,6 +12,11 @@
     </div>
   </div>
   <div class="card-wrapper p-3">
+    <span>
+      <% if @contexts.empty? %>
+        <%= "Time to create a new context! Use the + button to get started." %>
+      <% end %>
+    </span>
       <% @contexts.each do |context| %>
       <div class="card border">
         <div class="px-3 py-2 row align-items-center">
