@@ -20,10 +20,6 @@
           <%= f.text_area :description, :class => "form-control", data: {toggle: "autosize"}, rows: "1", autocomplete: 'off' %>
         </div>
         <div class="form-group">
-          <label class="form-control-label">Contexts</label>
-          <input type="text" class="form-control" value="" data-toggle="tags" placeholder="Type here..." />
-        </div>
-        <div class="form-group">
           <label class="form-control-label">Project</label>
           <select class="custom-select form-control" name="project_id" id="task[project_id]" value="Select a project">
             <% @project_options = @active_user.projects.all %>
@@ -34,7 +30,7 @@
         </div>
         <div class="form-group">
           <label class="form-control-label">Due date</label>
-          <%= f.text_field :due_date, :class => "form-control", data: {toggle: "datetime"}, placeholder: "Select date and time" %>
+          <%= f.date_field :due_date, :class => "form-control" %>
         </div>
       </div>
       <div class="card-footer">

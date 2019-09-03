@@ -13,6 +13,7 @@ class ContextsController < ApplicationController
 
   def new
     @context = Context.new
+    @context.user_id = current_user.id
   end
 
   def create
