@@ -23,8 +23,6 @@
           <label class="form-control-label">Due date</label>
           <%= f.date_field :due_date, :class => "form-control" %>
         </div>
-      </div>
-      <div class="card-footer">
         <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
         <%= link_to 'Cancel', tasks_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
       </div>
