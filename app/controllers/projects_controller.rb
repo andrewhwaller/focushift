@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   def index
     @project = Project.new
     @projects = current_user.projects.all.where("status = '0'")
+    @project.user_id = current_user.id
   end
 
   def show
@@ -13,6 +14,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.user_id = current_user.id
   end
 
   def create
