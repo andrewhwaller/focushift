@@ -10,6 +10,9 @@
       </div>
       <div class="card-wrapper p-3">
         <div class="list-group">
+            <% if @project.tasks.empty? %>
+              <%= "Time to add some tasks to this project! Use the + button to get started." %>
+            <% end %>
           <% @project.tasks.each do |task| %>
             <%= form_for(task) do |f| %>
               <div class="custom-control custom-checkbox">
