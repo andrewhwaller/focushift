@@ -12,10 +12,12 @@ class TasksController < ApplicationController
   end
 
   def new
+    @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
     @task = Task.new
   end
 
   def create
+    @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     @task.save
