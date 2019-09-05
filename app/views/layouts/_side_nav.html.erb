@@ -1,52 +1,24 @@
 <div class="sidenav" id="sidenav-main">
-        <!-- Sidenav header -->
-        <div class="sidenav-header d-flex flex-column align-items-top justify-content-between text-center">
-          <a href="/" class="navbar-brand">
-            <%= image_tag("target_flat.svg", :class => "navbar-brand-img",:alt => "target logo") %> <span class="text-white">focushift</span>
-          </a>
-          <div class="ml-auto">
-            <!-- Sidenav toggler -->
-            <div class="sidenav-toggler sidenav-toggler-dark d-md-none" data-action="sidenav-unpin" data-target="#sidenav-main">
-              <div class="sidenav-toggler-inner">
-                <i class="sidenav-toggler-line bg-white"></i>
-                <i class="sidenav-toggler-line bg-white"></i>
-                <i class="sidenav-toggler-line bg-white"></i>
-              </div>
-            </div>
-          </div>
+  <div class="sidenav-header d-flex flex-column align-items-top justify-content-between text-center">
+    <a href="/" class="navbar-brand">
+      <%= image_tag("target_flat.svg", :class => "navbar-brand-img",:alt => "target logo") %> <span class="text-white">focushift</span>
+    </a>
+    <div class="ml-auto">
+      <div class="sidenav-toggler sidenav-toggler-dark d-md-none" data-action="sidenav-unpin" data-target="#sidenav-main">
+        <div class="sidenav-toggler-inner">
+          <i class="sidenav-toggler-line bg-white"></i>
+          <i class="sidenav-toggler-line bg-white"></i>
+          <i class="sidenav-toggler-line bg-white"></i>
         </div>
-        <!-- User mini profile -->
-        <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
-          <div>
-            <div class="mt-4">
-              <h5 class="mb-0 text-white"><%= @user_full_name %></h5>
-            </div>
-          </div>
-        </div>
-      <div class="nav-application clearfix">
-        <a href="/" class="btn btn-square text-sm active">
-          <span class="btn-inner--icon d-block"><i class="fas fa-home fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Home</span>
-        </a>
-        <a href="/tasks" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-inbox fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Inbox</span>
-        </a>
-        <a href="/contexts" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-map-marker-alt fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Contexts</span>
-        </a>
-        <a href="/projects" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-tasks fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Projects</span>
-        </a>
-        <a href="/partnerships" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-hands-helping fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Partnerships</span>
-        </a>
-        <a href="/bokeh" class="btn btn-square text-sm">
-          <span class="btn-inner--icon d-block"><i class="fas fa-camera-retro fa-2x"></i></span>
-          <span class="btn-inner--icon d-block pt-2">Bokeh Mode</span>
-        </a>
       </div>
-      <span class="empty-container" data-placeholder="Empty"></span>
+    </div>
+  </div>
+  <div class="sidenav-user d-flex flex-column align-items-center justify-content-between text-center">
+    <div>
+      <div class="mt-4">
+        <h5 class="mb-0 text-white"><%= @user_full_name %></h5>
+      </div>
+    </div>
+  </div>
+  <span class="empty-container" data-placeholder="Empty"></span>
+</div>
