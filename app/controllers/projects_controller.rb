@@ -13,11 +13,12 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @context_options = current_user.contexts.all.map{ |c| [ c.name, c.id ] }
     @project = Project.new
-    @project.user_id = current_user.id
   end
 
   def create
+    @context_options = current_user.contexts.all.map{ |c| [ c.name, c.id ] }
     @project = Project.new(project_params)
     @project.user_id = current_user.id
     @project.save
