@@ -15,16 +15,16 @@
           <%= f.text_field :name, :class => "form-control", autocomplete: 'off' %>
         </div>
         <div class="form-group">
-          <label class="form-control-label mb-0">Task description</label>
+          <%= f.label :description, :class => "form-control-label", :value => "Task description" %>
           <small class="form-text text-muted mb-2 mt-0">This textarea will autosize while you type</small>
           <%= f.text_area :description, :class => "form-control", data: {toggle: "autosize"}, rows: "1", autocomplete: 'off' %>
         </div>
         <div class="form-group">
-          <label class="form-control-label">Due date</label>
+          <%= f.label :due_date, :class => "form-control-label", :value => "Due date" %>
           <%= f.date_field :due_date, :class => "form-control" %>
         </div>
         <div class="form-group">
-          <label class="form-control-label">Project</label>
+          <%= f.label :project_id, :class => "form-control-label", :value => "Project" %>
           <%= select(:task, :project_id, @project_options, { :include_blank => true }, { class: "form-control custom-select custom-select mb-3" }) %>
         </div>
         <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
