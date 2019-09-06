@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
           <label class="form-control-label">Project</label>
-          <%= select(:task, :project_id, @project_options) %>
+          <%= select(:task, :project_id, @project_options, { :include_blank => true }, { class: "form-control custom-select custom-select mb-3" }) %>
         </div>
         <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
         <%= link_to 'Cancel', tasks_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
