@@ -31,6 +31,8 @@ gem 'bootstrap', '~> 4.3.1'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'figaro'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
