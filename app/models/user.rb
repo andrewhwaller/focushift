@@ -19,7 +19,13 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.provider = auth.provider
       user.uid = auth.uid
+      user.first_name = auth.first_name
+      user.last_name = auth.last_name
       user.password = Devise.friendly_token[0,20]
     end
+  end
+
+  def user_full_name
+    first_name + " " + last_name
   end
 end
