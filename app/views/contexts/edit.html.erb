@@ -4,7 +4,7 @@
       <div class="card-header actions-toolbar">
         <div class="row justify-content-between align-items-center">
           <div class="col">
-            <h6 class="d-inline-block mb-0"><i class="fas fa-map-marker-alt"></i> Edit context</h6>
+            <h6 class="d-inline-block mb-0"><i class="fas fa-inbox"></i> New context</h6>
           </div>
         </div>
       </div>
@@ -18,8 +18,6 @@
           <%= f.label :location, :class => "form-control-label", :value => "Context location" %>
           <%= f.text_field :location, :class => "form-control", autocomplete: 'off' %>
         </div>
-      </div>
-      <div class="card-footer">
         <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
         <%= link_to 'Cancel', contexts_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
       </div>
