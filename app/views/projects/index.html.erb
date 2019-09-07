@@ -27,6 +27,11 @@
               <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true %>
             <% end %>
               <label class="custom-control-label h6 text-sm" for="<%= project.id %>"><%= link_to project.name, project_path(project) %></label>
+              <% project.contexts.each do |c| %>
+              <span class="badge badge-soft-primary badge-pill">
+                <%= c.name %>
+              </span>
+              <% end %>
             </div>
           </div>
           <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
