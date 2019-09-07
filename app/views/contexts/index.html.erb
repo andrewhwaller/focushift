@@ -29,6 +29,12 @@
               </span>
           </div>
           <div class="card-meta d-inline-flex align-items-center ml-sm-auto">
+          <div class="mr-2">
+              <span>
+                <i class="fa fa-tasks mr-2"></i>
+                  <%= pluralize(context.projects.count, "project") %>
+              </span>
+            </div>
             <div class="mr-2">
               <%= link_to edit_context_path(context), :class => "action-item" do %>
                 <i class="fas fa-edit"></i>
