@@ -30,7 +30,7 @@
               <div class="mr-2">
                 <span>
                   <i class="far fa-check-circle mr-2"></i>
-                  <%= partnership.projects.count %> projects
+                  <%= pluralize(partnership.projects.count, "project") %>
                 </span>
               </div>
             </div>
