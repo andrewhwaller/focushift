@@ -80,7 +80,7 @@
           <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media media-pill align-items-center">
               <div class="ml-2 d-none d-lg-block">
-                <span class="mb-0 text-sm  font-weight-bold"><%= @user_full_name %></span>
+                <span class="mb-0 text-sm  font-weight-bold"><%= @active_user.user_full_name %></span>
               </div>
             </div>
           </a>
@@ -95,10 +95,10 @@
             <span>Settings</span>
           </a>
           <div class="dropdown-divider"></div>
-            <a href="#!" class="dropdown-item">
+            <span class="dropdown-item">
               <i class="fas fa-sign-out-alt"></i>
               <span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span>
-            </a>
+            </span>
           </div>
         </li>
       </ul>
