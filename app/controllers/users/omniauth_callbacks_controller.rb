@@ -14,6 +14,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook
     @user = User.from_omniauth(request.env["omniauth.auth"])
+    @user.first_name = auth.first_name
+    @user.last_name = auth.last_name
     sign_in_and_redirect @user
   end
 end
