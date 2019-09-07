@@ -2,6 +2,7 @@ class Project < ApplicationRecord
   belongs_to :user
   has_many :tasks
   has_and_belongs_to_many :contexts
+  has_and_belongs_to_many :partnerships
   has_many :users, through: :partnerships
 
   validates :name, :presence => true

@@ -22,11 +22,7 @@
       <div class="card border shadow-none">
         <div class="px-3 py-2 row align-items-center">
           <div class="col-10">
-            <%= form_for(partnership) do |f| %>
-            <div class="custom-control custom-checkbox">
-              <%= f.check_box :status, :class => "custom-control-input toggle", :id => partnership.id, :value => true %>
-            <% end %>
-              <label class="custom-control-label h6 text-sm" for="<%= partnership.id %>"><%= link_to partnership.name, partnership_path(partnership) %></label>
+            <label class="custom-control-label h6 text-sm" for="<%= partnership.id %>"><%= link_to partnership.partner.email, partnership_path(partnership) %></label>
             </div>
           </div>
           <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
@@ -34,7 +30,7 @@
               <div class="mr-2">
                 <span>
                   <i class="far fa-check-circle mr-2"></i>
-                  <%= partnership.tasks.count %> tasks
+                  <%= partnership.projects.count %> projects
                 </span>
               </div>
             </div>
