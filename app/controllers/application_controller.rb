@@ -15,5 +15,6 @@ class ApplicationController < ActionController::Base
 
   def set_active_user
     @active_user = current_user
+    # @user_full_name = (current_user.first_name + " " + current_user.last_name)
   end
 end
