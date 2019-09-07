@@ -97,7 +97,7 @@
           <div class="dropdown-divider"></div>
             <a href="#!" class="dropdown-item">
               <i class="fas fa-sign-out-alt"></i>
-              <span>Logout</span>
+              <span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span>
             </a>
           </div>
         </li>
