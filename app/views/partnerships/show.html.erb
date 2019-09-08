@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header actions-toolbar">
+        <div class="row justify-content-between align-items-center">
+          <div class="col">
+            <h6 class="d-inline-block mb-0"><i class="fas fa-tasks"></i> View project</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrapper p-3">
+        <div class="list-group">
+            <% if @project.tasks.empty? %>
+              <%= "Time to add some tasks to this project! Use the + button to get started." %>
+            <% end %>
+          <% @project.tasks.each do |task| %>
+            <%= form_for(task) do |f| %>
+              <div class="custom-control custom-checkbox">
+                <%= f.check_box :status, :class => "custom-control-input toggle", :id => task.id, :value => true %>
+            <% end %>
+                <label class="list-group-item list-group-item-action" for="<%= task.id %>">
+                  <%= link_to task.name, task_path(task) %>
+                </label>
+              </div>
+          <div class="card-meta d-inline-flex align-items-center ml-sm-auto">
+            <div class="mr-2">
+              <%= task.due_date %>
+            </div>
+            <div class="mr-2">
+              <%= link_to edit_task_path(task), :class => "list-group-action-item" do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+            </div>
+            <div class="mr-2">
+              <%= button_to task_path(task), :method => :delete, :class => "list-group-action-item" do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
