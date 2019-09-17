@@ -18,7 +18,7 @@
           <% @project.tasks.each do |task| %>
             <div class="card border">
               <div class="px-3 py-2 row align-items-center">
-                <div class="col-10">
+                <div class="col">
                   <%= form_for(task) do |f| %>
                   <div class="custom-control custom-checkbox">
                     <%= f.check_box :status, :class => "custom-control-input toggle", :id => task.id, :value => true %>
