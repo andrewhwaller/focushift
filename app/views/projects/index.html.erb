@@ -24,7 +24,7 @@
           <div class="col-10">
             <%= form_for(project) do |f| %>
             <div class="custom-control custom-checkbox">
-              <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true %>
+              <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true, :onchange => "this.form.submit();" %>
             <% end %>
               <label class="custom-control-label h6 text-sm" for="<%= project.id %>"><%= link_to project.name, project_path(project) %></label>
               <% project.contexts.each do |c| %>
