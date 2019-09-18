@@ -31,7 +31,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    redirect_back(fallback_location: root_path)
+    redirect_to tasks_path
   end
 
   def destroy
