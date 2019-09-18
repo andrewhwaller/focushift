@@ -9,6 +9,7 @@ class PartnershipsController < ApplicationController
 
   def show
     @partnership = Partnership.find(params[:id])
+    @partnership_projects = Project.all.where(partnership_id: @partnership.id)
   end
 
   def new
