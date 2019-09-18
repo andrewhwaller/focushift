@@ -31,7 +31,10 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    redirect_to tasks_path
+    if @task.project_id = nil 
+      redirect_to tasks_path
+      else redirect_to project_path(Project.find_by(@task.project_id))
+    end
   end
 
   def destroy
