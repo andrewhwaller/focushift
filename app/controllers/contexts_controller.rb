@@ -9,6 +9,7 @@ class ContextsController < ApplicationController
 
   def show
     @context = Context.find(params[:id])
+    @projects = @context.projects.all
   end
 
   def new
