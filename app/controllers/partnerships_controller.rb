@@ -4,7 +4,7 @@ class PartnershipsController < ApplicationController
   
   def index
     @partnership = Partnership.new
-    @partnerships = current_user.partnerships.all
+    @partnerships = current_user.partnerships.all + Partnership.all.where(partner_id: current_user.id)
   end
 
   def show
