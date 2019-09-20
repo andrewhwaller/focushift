@@ -30,7 +30,6 @@ gem 'bootstrap', '~> 4.3.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
-gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'figaro'
 
