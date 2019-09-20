@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   has_many :tasks
   has_and_belongs_to_many :contexts
   has_many :partnerships_projects
-  has_many :partnerships, through: :partnerships_projects
+  has_many :partnerships, :through => :partnerships_projects
 
   validates :name, :presence => true
 
