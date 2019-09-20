@@ -20,7 +20,6 @@ class ProjectsController < ApplicationController
 
   def create
     @context_options = current_user.contexts.all.map{ |c| [ c.name, c.id ] }
-    @partnership_options = current_user.partnerships.all{ |p| [ p.name, p.id ] }
     @project = Project.new(project_params)
     @project.user_id = current_user.id
     @project.save
@@ -44,6 +43,10 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def partnership_options
+    @partnership_options = current_user.partnerships.all
+  end
 
   def project_params
     params.require(:project).permit!
