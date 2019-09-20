@@ -1,5 +1,6 @@
 class Partnership < ApplicationRecord
   belongs_to :user
   belongs_to :partner, class_name: "User"
-  has_and_belongs_to_many :projects
+  has_many :partnerships_projects
+  has_many :projects, through: :partnerships_projects
 end
