@@ -24,11 +24,4 @@ class User < ApplicationRecord
       parse_name(user, auth.info.name)
     end
   end
-
-  private
-  def self.parse_name(user, name)
-    name_arr = name.split(“ “)
-    user.last_name = name_arr.pop
-    user.first_name = name_arr.join(“ “)
-  end
 end
