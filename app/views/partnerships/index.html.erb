@@ -22,7 +22,10 @@
       <div class="card border shadow-none">
         <div class="px-3 py-2 row align-items-center">
           <div class="col-10">
-            <label class="h6 text-sm" for="<%= partnership.id %>"><%= link_to partnership.partner.email, partnership_path(partnership) %></label>
+            <label class="h6 text-sm" for="<%= partnership.id %>"><%= link_to partnership.name, partnership_path(partnership) %></label>
+            <br>
+            <i class="fas fa-user-friends"></i>
+            <%= partnership.partner.email %>
           </div>
           <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
             <div class="actions d-inline-block">
