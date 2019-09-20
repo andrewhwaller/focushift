@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
           <label class="form-control-label">Partnership</label>
-          <%= f.collection_select(:partnership_id, @active_user.partnerships.all, :id, :name, :include_blank => true ) %>
+          <%= f.collection_select(:partnership_ids, @active_user.partnerships.all, :id, :name, :include_blank => true ) %>
         </div>
         <div class="form-group">
           <label class="form-control-label">Due date</label>
