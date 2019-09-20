@@ -21,7 +21,6 @@ class User < ApplicationRecord
       user.provider = auth.provider
       user.uid = auth.uid
       user.password = Devise.friendly_token[0,20]
-      parse_name(user, auth.info.name)
     end
   end
 end
