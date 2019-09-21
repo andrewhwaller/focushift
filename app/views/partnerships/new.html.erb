@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
           <label class="form-control-label">Partner</label>
-          <%= select("partnership", "partner_id", User.all.collect {|u| [ u.email, u.id ] }, { include_blank: true }) %>
+          <%= select("partnership", "partner_id", User.all.where.not(id: @active_user.id).collect {|u| [ u.email, u.id ] }, { include_blank: true }) %>
         </div>
         <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
         <%= link_to 'Cancel', partnerships_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
