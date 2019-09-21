@@ -5,7 +5,7 @@ class Project < ApplicationRecord
   has_and_belongs_to_many :partnerships
 
   validates :name, presence: { message: "cannot be blank" }
-  validates :partnership_id, :numericality => true
+  validates :partnership_id, numericality: { message: "Something seems wrong with %{attribute}!" }
 
   STATUS = {
     :incomplete => 0,
