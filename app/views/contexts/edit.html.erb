@@ -10,6 +10,9 @@
       </div>
       <div class="card-wrapper p-3">
         <%= form_for @context do |f| %>
+        <% if @context.errors.any?%>
+          <%= render 'contexts/errors' %>
+        <% end %>
         <div class="form-group">
           <%= f.label :name, :class => "form-control-label", :value => "Context name" %>
           <%= f.text_field :name, :class => "form-control", autocomplete: 'off' %>
