@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  get 'project_tasks', action: :project_tasks_index, controller: 'tasks'
+
   root to: 'tasks#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
