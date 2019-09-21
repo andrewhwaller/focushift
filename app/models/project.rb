@@ -5,6 +5,7 @@ class Project < ApplicationRecord
   has_and_belongs_to_many :partnerships
 
   validates :name, presence: { message: "cannot be blank." }
+  validates_uniqueness_of :name, conditions: -> { where.(user_id: current_user.id) }, { message: "You've already used that %{attribute}!" }
   validates :partnership_id, numericality: { message: "Something seems wrong with %{attribute}!" }
 
   STATUS = {
