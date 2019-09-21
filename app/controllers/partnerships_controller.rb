@@ -19,8 +19,12 @@ class PartnershipsController < ApplicationController
   def create
     @partnership = Partnership.new(partnership_params)
     @partnership.user_id = current_user.id
-    @partnership.save
-    redirect_to partnerships_path
+    if @partnership.valid?
+      @partnership.save
+      redirect_to partnerships_path
+    else
+      render :new
+    end
   end
 
   def edit
