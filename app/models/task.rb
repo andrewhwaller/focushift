@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
   belongs_to :user
   has_one :project, :class_name => 'Project', :foreign_key => 'project_id'
+
+  scope :incomplete_and_inboxed, -> { where(status: '0', project_id: nil) }
   
   validates :name, presence: { message: "cannot be blank." }
 
