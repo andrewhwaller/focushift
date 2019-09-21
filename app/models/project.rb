@@ -4,10 +4,10 @@ class Project < ApplicationRecord
   has_and_belongs_to_many :contexts
   has_and_belongs_to_many :partnerships
 
-  # scope :owned_by_current_user, -> { where(deleted_at: nil) }
+  scope :owned_by_current_user, -> { where(user_id: current_user.id) }
 
-  validates :name, presence: { message: "cannot be blank." }
-  validates_uniqueness_of :name, conditions: -> { where(user_id: "@active_user.id") }, :message => "You've already used that %{attribute}!"
+  validates :name, presence: { message: "cannot be blank" }
+  validates :name, uniqueness: { constraint: -> { owned_by_current_user } }
 
   STATUS = {
     :incomplete => 0,
