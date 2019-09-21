@@ -11,9 +11,15 @@
       </div>
     <% end %>
       <div class="col-md-6 d-flex align-items-center justify-content-between justify-content-md-end">
+      <% if params[:project_id] %>
+        <%= link_to new_project_task_path, class: 'btn btn-sm btn-success btn-icon-only rounded-circle' do %>
+          <i class="fas fa-plus"></i>
+        <% end %>
+      <% else %>
         <%= link_to new_task_path, class: 'btn btn-sm btn-success btn-icon-only rounded-circle' do %>
           <i class="fas fa-plus"></i>
         <% end %>
+      <% end %>
       </div>
     </div>
   </div>

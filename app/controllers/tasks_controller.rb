@@ -21,10 +21,12 @@ class TasksController < ApplicationController
   def new
     @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
     @task = Task.new
+    if params[:project_id]
+      @task.project_id = params[:project_id]
+    end
   end
 
   def create
-    @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     render :new unless validate_object(@task)
