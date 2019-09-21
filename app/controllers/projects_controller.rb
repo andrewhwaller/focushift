@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   
   def index
     @project = Project.new
-    @projects = current_user.projects.all.where("status = '0'")
+    @projects = current_user.projects.all.incomplete
     @project.user_id = current_user.id
   end
 

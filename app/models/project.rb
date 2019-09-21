@@ -4,6 +4,8 @@ class Project < ApplicationRecord
   has_and_belongs_to_many :contexts
   has_and_belongs_to_many :partnerships
 
+  scope :incomplete, -> { where(status: '0') }
+
   validates :name, presence: { message: "cannot be blank" }
   validates_uniqueness_of :name, scope: :user_id
 
