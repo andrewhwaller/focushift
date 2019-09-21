@@ -55,13 +55,6 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  def project_tasks_index
-    @project = Project.find(params[:project_id])
-    @task = Task.new
-    @task.project_id = @project.id
-    @tasks = @project.tasks
-  end
-
   private
 
   def task_params
