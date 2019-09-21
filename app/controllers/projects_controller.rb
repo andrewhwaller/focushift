@@ -22,8 +22,12 @@ class ProjectsController < ApplicationController
     @context_options = current_user.contexts.all.map{ |c| [ c.name, c.id ] }
     @project = Project.new(project_params)
     @project.user_id = current_user.id
-    @project.save
-    redirect_to projects_path
+    if @project.valid?
+      @project.save
+      redirect_to tasks_path
+    else
+      render :new
+    end
   end
 
   def edit
