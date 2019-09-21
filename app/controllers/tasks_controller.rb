@@ -3,8 +3,14 @@ class TasksController < ApplicationController
   before_action :set_active_user
   
   def index
-    @task = Task.new
-    @tasks = current_user.tasks.incomplete_and_inboxed
+    if params[:project_id]
+      @project = Project.find(params[:project_id])
+      @task = Task.new
+      @task.project_id = @project.id
+      @tasks = @project.tasks
+    else
+      @task = Task.new
+      @tasks = current_user.tasks.incomplete_and_inboxed
     end
   end
 
@@ -50,10 +56,10 @@ class TasksController < ApplicationController
   end
 
   def project_tasks_index
+    @project = Project.find(params[:project_id])
     @task = Task.new
-    @task.project_id = params[:project_id]
-    @tasks = Project.find(params[:project_id]).tasks
-    render :project_tasks_index
+    @task.project_id = @project.id
+    @tasks = @project.tasks
   end
 
   private
