@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
     @project.user_id = current_user.id
     if @project.valid?
       @project.save
-      redirect_to tasks_path
+      redirect_to projects_path
     else
       render :new
     end
