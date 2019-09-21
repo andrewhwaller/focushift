@@ -20,8 +20,12 @@ class ContextsController < ApplicationController
   def create
     @context = Context.new(context_params)
     @context.user_id = current_user.id
-    @context.save
-    redirect_to contexts_path
+    if @context.valid?
+      @context.save
+      redirect_to contexts_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -31,7 +35,11 @@ class ContextsController < ApplicationController
   def update
     @context = Context.find(params[:id])
     @context.update(context_params)
-    redirect_to contexts_path
+    if @context.valid?
+      redirect_to contexts_path
+    else
+      render :edit
+    end
   end
 
   def destroy
