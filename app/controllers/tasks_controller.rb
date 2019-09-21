@@ -4,7 +4,11 @@ class TasksController < ApplicationController
   
   def index
     @task = Task.new
-    @tasks = current_user.tasks.incomplete_and_inboxed
+    if params[:project_id]
+      @tasks = Project.find(params[:project_id]).tasks
+    else
+      @tasks = current_user.tasks.incomplete_and_inboxed
+    end
   end
 
   def show

@@ -3,6 +3,7 @@ class Task < ApplicationRecord
   has_one :project, :class_name => 'Project', :foreign_key => 'project_id'
 
   scope :incomplete_and_inboxed, -> { where(status: '0', project_id: nil) }
+  scope :incomplete, -> { where(status: '0') }
   
   validates :name, presence: { message: "cannot be blank." }
 

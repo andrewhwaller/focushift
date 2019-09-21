@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @project_tasks = @project.tasks.where({status: "0"})
+    @project_tasks = @project.tasks.incomplete
   end
 
   def new
