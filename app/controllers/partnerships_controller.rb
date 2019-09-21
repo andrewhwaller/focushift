@@ -34,7 +34,11 @@ class PartnershipsController < ApplicationController
   def update
     @partnership = Partnership.find(params[:id])
     @partnership.update(partnership_params)
-    redirect_to partnerships_path
+    if @partnership.valid?
+      redirect_to partnerships_path
+    else
+      render :edit
+    end
   end
 
   def destroy
