@@ -1,0 +1,8 @@
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <% @partnership.errors.full_messages.each do |message| %>
+        <strong>Heads up!</strong> <%= message %>
+    <% end %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
