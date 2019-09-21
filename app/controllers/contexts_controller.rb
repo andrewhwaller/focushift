@@ -8,7 +8,7 @@ class ContextsController < ApplicationController
   end
 
   def show
-    @context = Context.find(params[:id])
+    @context = current_user.contexts.find(context_params)
     @projects = @context.projects.all
   end
 
@@ -29,11 +29,11 @@ class ContextsController < ApplicationController
   end
 
   def edit
-    @context = Context.find(params[:id])
+    @context = current_user.contexts.find(context_params)
   end
 
   def update
-    @context = Context.find(params[:id])
+    @context = current_user.contexts.find(context_params)
     @context.update(context_params)
     if @context.valid?
       redirect_to contexts_path
@@ -43,7 +43,7 @@ class ContextsController < ApplicationController
   end
 
   def destroy
-    @context = Context.find(params[:id])
+    @context = current_user.contexts.find(context_params)
     @context.destroy
     redirect_to contexts_path
   end
