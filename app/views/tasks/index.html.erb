@@ -18,12 +18,14 @@
     </div>
   </div>
   <div class="card-wrapper p-3">
-    <div class="form-group">
+    <% if !params[:project_id] %>
+      <div class="form-group">
       <%= form_for(@task) do |f| %>
         <%= f.text_field :name, :class => "form-control form-control-flush", :placeholder => "Click here and start typing to create a new inbox item...", autocomplete: 'off' %>
         <%= f.submit :style => "display: none;" %>
       <% end %>
-    </div>
+      </div>
+    <% end %>
     <div class="checklist">
       <% @tasks.each do |task| %>
       <div class="card border">
