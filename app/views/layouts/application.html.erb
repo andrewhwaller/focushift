@@ -10,9 +10,7 @@
   </head>
   <body class="application application-offset ready d-flex flex-column" style="min-height: 100vh;">
   <% if user_signed_in? %>
-    <div class="container-fluid container-application">
-      <%= render 'layouts/side_nav' %>
-    </div>
+    <%= render 'layouts/side_nav' %>
     <div class="main-content position-relative">
       <%= render 'layouts/main_nav' %>
       <div class="page-content">
@@ -24,9 +22,10 @@
             </div>
           </div>
         </div>
-    <% end %>
-      <%= yield %>
+  <% end %>
+    <%= yield %>
       <span class="empty-container" data-placeholder="Empty"></span>
+      </div>
       </div>
     </div>
   </body>
