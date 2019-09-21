@@ -5,4 +5,4 @@ class ProjectContext < ActiveRecord::Base
     # Relations
     belongs_to :project
     belongs_to :context
-  end
+end

@@ -27,12 +27,7 @@ class TasksController < ApplicationController
     @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
     @task = Task.new(task_params)
     @task.user_id = current_user.id
-    if @task.valid?
-      @task.save
-      redirect_to tasks_path
-    else
-      render :new
-    end
+    render :new unless validate_task
   end
 
   def edit
@@ -42,11 +37,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    if @task.valid?
-      redirect_to tasks_path
-    else
-      render :edit
-    end
+    render :edit unless validate_task
   end
 
   def destroy
@@ -59,5 +50,12 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit!
+  end
+
+  def validate_task
+    if @task.valid?
+      @task.save
+      redirect_to tasks_path
+    end
   end
 end
