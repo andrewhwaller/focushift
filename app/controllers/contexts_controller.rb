@@ -20,12 +20,7 @@ class ContextsController < ApplicationController
   def create
     @context = Context.new(context_params)
     @context.user_id = current_user.id
-    if @context.valid?
-      @context.save
-      redirect_to contexts_path
-    else
-      render :new
-    end
+    render :new unless validate_object(@context)
   end
 
   def edit
@@ -35,11 +30,7 @@ class ContextsController < ApplicationController
   def update
     @context = Context.find(context_params)
     @context.update(context_params)
-    if @context.valid?
-      redirect_to contexts_path
-    else
-      render :edit
-    end
+    render :edit unless validate_object(@context)
   end
 
   def destroy

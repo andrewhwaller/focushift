@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
     @task = Task.new(task_params)
     @task.user_id = current_user.id
-    render :new unless validate_task
+    render :new unless validate_object(@task)
   end
 
   def edit

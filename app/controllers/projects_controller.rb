@@ -22,12 +22,7 @@ class ProjectsController < ApplicationController
     @context_options = current_user.contexts.all.map{ |c| [ c.name, c.id ] }
     @project = Project.new(project_params)
     @project.user_id = current_user.id
-    if @project.valid?
-      @project.save
-      redirect_to projects_path
-    else
-      render :new
-    end
+    render :new unless validate_object(@project)
   end
 
   def edit
@@ -37,11 +32,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     @project.update(project_params)
-    if @project.valid?
-      redirect_to projects_path
-    else
-      render :edit
-    end
+    render :edit unless validate_object(@project)
   end
 
   def destroy
@@ -60,3 +51,4 @@ class ProjectsController < ApplicationController
     params.require(:project).permit!
   end
 end
+

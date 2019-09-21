@@ -19,12 +19,7 @@ class PartnershipsController < ApplicationController
   def create
     @partnership = Partnership.new(partnership_params)
     @partnership.user_id = current_user.id
-    if @partnership.valid?
-      @partnership.save
-      redirect_to partnerships_path
-    else
-      render :new
-    end
+    render :new unless validate_object(@partnership)
   end
 
   def edit
@@ -34,11 +29,7 @@ class PartnershipsController < ApplicationController
   def update
     @partnership = Partnership.find(params[:id])
     @partnership.update(partnership_params)
-    if @partnership.valid?
-      redirect_to partnerships_path
-    else
-      render :edit
-    end
+    render :edit unless validate_object(@partnership)
   end
 
   def destroy

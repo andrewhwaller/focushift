@@ -16,4 +16,12 @@ class ApplicationController < ActionController::Base
   def set_active_user
     @active_user = current_user
   end
+
+  def validate_object(object)
+    if object.valid?
+      object.save
+      redirect_to action: "index"
+    end
+  end
 end
+
