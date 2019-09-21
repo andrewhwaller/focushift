@@ -5,6 +5,7 @@ class Project < ApplicationRecord
   has_and_belongs_to_many :partnerships
 
   validates :name, :presence => true
+  validates :partnership_id, :numericality => true
 
   STATUS = {
     :incomplete => 0,

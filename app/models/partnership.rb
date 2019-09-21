@@ -4,5 +4,5 @@ class Partnership < ApplicationRecord
   has_and_belongs_to_many :projects
 
   validates :name, :presence => true
-  validates :partner_id, :presence => true, :type => Integer
+  validates :partner_id, :numericality => true
 end
