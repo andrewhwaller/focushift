@@ -4,10 +4,8 @@ class Project < ApplicationRecord
   has_and_belongs_to_many :contexts
   has_and_belongs_to_many :partnerships
 
-  scope :owned_by_current_user, -> { where(user_id: current_user.id) }
-
   validates :name, presence: { message: "cannot be blank" }
-  validates :name, uniqueness: { constraint: -> { owned_by_current_user } }
+  validates_uniqueness_of :name, scope: :user_id
 
   STATUS = {
     :incomplete => 0,
