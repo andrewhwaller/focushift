@@ -3,7 +3,6 @@ class Project < ApplicationRecord
   has_many :tasks
   has_many :project_contexts
   has_many :contexts, through: :project_contexts
-  # has_and_belongs_to_many :contexts
   has_and_belongs_to_many :partnerships
 
   scope :incomplete, -> { where(status: '0') }
