@@ -19,7 +19,7 @@ class TasksController < ApplicationController
   end
 
   def new
-    @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
+    project_options
     @task = Task.new
     if params[:project_id]
       @task.project_id = params[:project_id]
@@ -33,6 +33,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    project_options
     @task = Task.find(params[:id])
   end
 
@@ -59,5 +60,9 @@ class TasksController < ApplicationController
       @task.save
       redirect_to tasks_path
     end
+  end
+
+  def project_options
+    @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
   end
 end

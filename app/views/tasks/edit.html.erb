@@ -18,25 +18,20 @@
           <%= f.text_field :name, :class => "form-control", autocomplete: 'off' %>
         </div>
         <div class="form-group">
-          <label class="form-control-label mb-0">Task description</label>
+          <%= f.label :description, :class => "form-control-label", :value => "Task description" %>
           <small class="form-text text-muted mb-2 mt-0">This textarea will autosize while you type</small>
           <%= f.text_area :description, :class => "form-control", data: {toggle: "autosize"}, rows: "1", autocomplete: 'off' %>
         </div>
         <div class="form-group">
-          <label class="form-control-label">Project</label>
-          <select class="custom-select form-control" name="project_id" id="task[project_id]" value="Select a project">
-            <% @project_options = @active_user.projects.all %>
-            <% @project_options.each do |project| %>
-              <option value="<%= project.id %>"><%= project.name %></option>
-            <%end%>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-control-label">Due date</label>
+          <%= f.label :due_date, :class => "form-control-label", :value => "Due date" %>
           <%= f.date_field :due_date, :class => "form-control" %>
         </div>
-        <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto", value: "Save" %>
-        <%= link_to "Cancel", tasks_path, :class => "btn btn-sm btn-link text-danger px-2" %>
+        <div class="form-group">
+          <%= f.label :project_id, :class => "form-control-label", :value => "Project" %>
+          <%= select(:task, :project_id, @project_options, { :include_blank => true }, { class: "form-control custom-select custom-select mb-3" }) %>
+        </div>
+        <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
+        <%= link_to 'Cancel', tasks_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
       </div>
     </div>
   <% end %>

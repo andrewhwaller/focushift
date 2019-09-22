@@ -34,7 +34,7 @@ class ContextsController < ApplicationController
   end
 
   def destroy
-    @context = current_user.contexts.find(context_params)
+    @context = current_user.contexts.find(params[:id])
     @context.destroy
     redirect_to contexts_path
   end
