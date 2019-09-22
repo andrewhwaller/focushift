@@ -12,7 +12,7 @@ Video walkthrough: [FOCUSHIFT Walkthrough](https://youtu.be/VdotMeti2y4)
 
 First, head over to the app's Heroku deployment at https://glacial-plateau-67081.herokuapp.com. If this is your first time using Focushift, click the "Sign Up" link to create an account using your email address. Alternatively, you can use the "Sign in with Facebook" link to create an account using your Facebook credentials. A link to Focushift's privacy policy is available at the bottom of the sign in screen.
 
-Once you're logged in you'll be greeted by the Inbox view. This is the heart of the Getting Things Done workflow. Use the Inbox to jot down the things that you need to get done. Use the text box at the top of the Inbox to quickly create new tasks. You can also check off tasks as you complete them.
+Once you're logged in you'll be greeted by the Inbox view. This is the heart of the Getting Things Done workflow. Use the Inbox to jot down the things that you need to get done by typing task names and pressing the enter key. Use the text box at the top of the Inbox to quickly create new tasks. You can also check off tasks as you complete them.
 
 Aside from tasks, you can organize your to-dos via Projects, Contexts, and Partnerships. Projects are groups of tasks that belong together. Contexts are locations or conceptual groupings that you might want to keep track of, i.e., Work, Home, School, etc. Finally, partnerships are connections that you can create with other users to share projects and tasks. 
 
