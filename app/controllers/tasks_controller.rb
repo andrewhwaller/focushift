@@ -27,6 +27,7 @@ class TasksController < ApplicationController
   end
 
   def create
+    project_options
     @task = Task.new(task_params)
     @task.user_id = current_user.id
     render :new unless validate_object(@task)
