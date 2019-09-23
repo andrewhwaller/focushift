@@ -28,7 +28,7 @@ class ContextsController < ApplicationController
   end
 
   def update
-    @context = Context.find(context_params)
+    @context = Context.find(params[:id])
     @context.update(context_params)
     render :edit unless validate_object(@context)
   end
