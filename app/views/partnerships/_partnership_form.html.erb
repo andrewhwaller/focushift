@@ -1,0 +1,17 @@
+<div class="card-wrapper p-3">
+  <%= form_for(@partnership) do |f| %>
+    <% if @partnership.errors.any?%>
+      <%= render 'partnerships/errors' %>
+    <% end %>
+    <div class="form-group">
+      <label class="form-control-label">Partnership name</label>
+      <%= f.text_field :name, :class => "form-control", autocomplete: 'off' %>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Partner</label>
+      <%= select("partnership", "partner_id", User.all.where.not(id: @active_user.id).collect {|u| [ u.email, u.id ] }, { include_blank: true }, :class => "form-control") %>
+    </div>
+  	<%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
+  	<%= link_to 'Cancel', partnerships_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
+  <% end %>
+</div>
