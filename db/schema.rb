@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_222805) do
+ActiveRecord::Schema.define(version: 2019_09_23_181741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,6 @@ ActiveRecord::Schema.define(version: 2019_09_21_222805) do
     t.index ["user_id"], name: "index_partnerships_on_user_id"
   end
 
-  create_table "partnerships_projects", id: false, force: :cascade do |t|
-    t.integer "partnership_id"
-    t.integer "project_id"
-  end
-
   create_table "project_contexts", force: :cascade do |t|
     t.bigint "project_id"
     t.bigint "context_id"
@@ -50,6 +45,15 @@ ActiveRecord::Schema.define(version: 2019_09_21_222805) do
     t.datetime "updated_at", null: false
     t.index ["context_id"], name: "index_project_contexts_on_context_id"
     t.index ["project_id"], name: "index_project_contexts_on_project_id"
+  end
+
+  create_table "project_partnerships", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "partnership_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["partnership_id"], name: "index_project_partnerships_on_partnership_id"
+    t.index ["project_id"], name: "index_project_partnerships_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -99,4 +103,6 @@ ActiveRecord::Schema.define(version: 2019_09_21_222805) do
   add_foreign_key "partnerships", "users", column: "partner_id"
   add_foreign_key "project_contexts", "contexts"
   add_foreign_key "project_contexts", "projects"
+  add_foreign_key "project_partnerships", "partnerships"
+  add_foreign_key "project_partnerships", "projects"
 end

@@ -1,9 +1,10 @@
 class Project < ApplicationRecord
   belongs_to :user
   has_many :tasks
-  has_many :project_contexts
+  has_many :project_contexts, dependent: :destroy
   has_many :contexts, through: :project_contexts
-  has_and_belongs_to_many :partnerships
+  has_many :project_partnerships
+  has_many :partnerships, through: :project_partnerships
 
   scope :incomplete, -> { where(status: '0') }
 
