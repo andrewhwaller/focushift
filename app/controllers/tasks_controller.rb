@@ -64,6 +64,6 @@ class TasksController < ApplicationController
   end
 
   def project_options
-    @project_options = current_user.projects.all.map{ |p| [ p.name, p.id ] }
+    @project_options = current_user.projects.all.incomplete.map{ |p| [ p.name, p.id ] }
   end
 end
