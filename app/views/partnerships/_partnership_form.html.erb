@@ -4,11 +4,11 @@
       <%= render 'partnerships/errors' %>
     <% end %>
     <div class="form-group">
-      <label class="form-control-label">Partnership name</label>
+      <%= f.label :name, :class => "form-control-label", :value => "Partnership name" %>
       <%= f.text_field :name, :class => "form-control", autocomplete: 'off' %>
     </div>
     <div class="form-group">
-      <label class="form-control-label">Partner</label>
+      <%= f.label :partner_id, :class => "form-control-label", :value => "Partnership" %>
       <%= select("partnership", "partner_id", User.all.where.not(id: @active_user.id).collect {|u| [ u.email, u.id ] }, { include_blank: true }, :class => "form-control") %>
     </div>
   	<%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
