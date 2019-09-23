@@ -27,8 +27,15 @@
               <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true, :onchange => "this.form.submit();" %>
             <% end %>
               <label class="custom-control-label h6 text-sm" for="<%= project.id %>"><%= link_to project.name, project_tasks_path(project) %></label>
+              <% project.partnerships.each do |p| %>
+              <span class="badge badge-soft-info badge-pill">
+                <i class="fas fa-hands-helping"></i>
+                <%= link_to p.name, partnership_path(p) %>
+              </span>
+              <% end %>
               <% project.contexts.each do |c| %>
               <span class="badge badge-soft-primary badge-pill">
+                <i class="fas fa-map-marker-alt"></i>
                 <%= link_to c.name, context_path(c) %>
               </span>
               <% end %>
