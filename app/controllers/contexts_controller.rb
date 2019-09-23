@@ -42,6 +42,6 @@ class ContextsController < ApplicationController
   private
 
   def context_params
-    params.require(:context).permit!
+    params.require(:context).permit(:name, :location)
   end
 end
