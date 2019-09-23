@@ -8,32 +8,7 @@
           </div>
         </div>
       </div>
-      <div class="card-wrapper p-3">
-        <%= form_for @task do |f| %>
-        <% if @task.errors.any?%>
-          <%= render 'tasks/errors' %>
-        <% end %>
-        <div class="form-group">
-          <%= f.label :name, :class => "form-control-label", :value => "Task name" %>
-          <%= f.text_field :name, :class => "form-control", autocomplete: 'off' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :description, :class => "form-control-label", :value => "Task description" %>
-          <small class="form-text text-muted mb-2 mt-0">This textarea will autosize while you type</small>
-          <%= f.text_area :description, :class => "form-control", data: {toggle: "autosize"}, rows: "1", autocomplete: 'off' %>
-        </div>
-        <div class="form-group">
-          <%= f.label :due_date, :class => "form-control-label", :value => "Due date" %>
-          <%= f.date_field :due_date, :class => "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :project_id, :class => "form-control-label", :value => "Project" %>
-          <%= select(:task, :project_id, @project_options, { :include_blank => true }, { class: "form-control custom-select custom-select mb-3" }) %>
-        </div>
-        <%= f.submit :class => "btn btn-sm btn-primary rounded-pill mr-auto;", value: "Save" %>
-        <%= link_to 'Cancel', tasks_path, :class => 'btn btn-sm btn-link text-danger px-2' %>
-      </div>
+      <%= render 'tasks/task_form' %>
     </div>
-  <% end %>
   </div>
 </div>
