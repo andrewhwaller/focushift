@@ -31,8 +31,8 @@
           <% end %>
         </div>
         <div class="form-group">
-          <label class="form-control-label">Partnership</label>
-          <%= select_tag :partnership_ids, options_for_select(@active_user.partnerships.all.map{ |p| [p.name, p.id] }), include_blank: true, class: 'form-control' %>
+          <label class="form-control-label">Partnership</label><br>
+          <%= f.select :partnership_ids, options_for_select(@active_user.partnerships.all.map{ |p| [p.name, p.id] }), include_blank: true, class: 'form-control' %>
         </div>
         <div class="form-group">
           <label class="form-control-label">Due date</label>
