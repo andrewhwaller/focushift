@@ -16,13 +16,15 @@
     <div class="checklist">
       <% @projects.each do |project| %>
       <div class="card border shadow-none">
-        <div class="px-3 py-2 row align-items-center">
+        <div class="px-3 py-2 d-flex flex-row">
           <div class="col-7">
             <%= form_for(project) do |f| %>
             <div class="custom-control custom-checkbox">
               <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true, :onchange => "this.form.submit();" %>
             <% end %>
-              <label class="custom-control-label h6 text-sm" for="<%= project.id %>"><%= link_to project.name, project_tasks_path(project) %></label>
+              <label class="custom-control-label h6 text-sm" for="<%= project.id %>">
+                <%= link_to project.name, project_tasks_path(project) %>
+              </label>
               <% project.partnerships.each do |p| %>
               <span class="badge badge-soft-info badge-pill">
                 <i class="fas fa-hands-helping"></i>
@@ -37,7 +39,7 @@
               <% end %>
             </div>
           </div>
-          <div class="card-meta d-inline-flex ml-sm-auto">
+          <div class="card-meta d-flex flex-row ml-sm-auto align-self-end">
             <div class="actions">
               <div class="mr-2">
                 <span>

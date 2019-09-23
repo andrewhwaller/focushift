@@ -32,7 +32,7 @@
         <div class="px-3 py-2 row align-items-center">
           <div class="col-10">
             <%= form_for(task) do |f| %>
-            <div class="custom-control custom-checkbox">
+              <div class="custom-control custom-checkbox">
               <%= f.check_box :status, :class => "custom-control-input toggle", :id => task.id, :value => true, :onchange => "this.form.submit();" %>
             <% end %>
               <label class="custom-control-label h6 text-sm" for="<%= task.id %>">
