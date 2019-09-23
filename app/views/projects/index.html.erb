@@ -17,7 +17,7 @@
       <% @projects.each do |project| %>
       <div class="card border shadow-none">
         <div class="px-3 py-2 row align-items-center">
-          <div class="col-10">
+          <div class="col-7">
             <%= form_for(project) do |f| %>
             <div class="custom-control custom-checkbox">
               <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true, :onchange => "this.form.submit();" %>
@@ -37,8 +37,8 @@
               <% end %>
             </div>
           </div>
-          <div class="col-auto card-meta d-inline-flex align-items-center ml-sm-auto">
-            <div class="actions d-inline-block">
+          <div class="card-meta d-inline-flex ml-sm-auto">
+            <div class="actions">
               <div class="mr-2">
                 <span>
                   <i class="far fa-check-circle mr-2"></i>

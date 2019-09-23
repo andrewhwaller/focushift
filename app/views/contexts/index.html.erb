@@ -16,7 +16,7 @@
       <% @contexts.each do |context| %>
       <div class="card border">
         <div class="px-3 py-2 row align-items-center">
-          <div class="col-10">
+          <div class="col-7">
             <label class="h6 text-sm" for="<%= context.id %>">
               <%= link_to context.name, context_path(context) %>
             </label>
@@ -24,7 +24,7 @@
                 <%= context.location %>
               </span>
           </div>
-          <div class="card-meta d-inline-flex align-items-center ml-sm-auto">
+          <div class="card-meta d-inline-flex ml-sm-auto">
           <div class="mr-2">
               <span>
                 <i class="fa fa-tasks mr-2"></i>
