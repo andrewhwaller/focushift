@@ -8,6 +8,9 @@ class TasksController < ApplicationController
       @task = Task.new
       @task.project_id = @project.id
       @tasks = @project.tasks
+    elsif params[:search]
+      @task = Task.new
+      @tasks = current_user.tasks.search_results(params[:search])
     else
       @task = Task.new
       @tasks = current_user.tasks.incomplete_and_inboxed
