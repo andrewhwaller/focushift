@@ -1,50 +1,65 @@
 <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border" id="navbar-main">
   <div class="container-fluid">
-      <!-- Brand + Toggler (for mobile devices) -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <!-- Navbar-->
-        <div class="collapse navbar-collapse navbar-collapse-fade" id="navbar-main-collapse">
-          <ul class="navbar-nav align-items-lg-center">
-            <li class="border-top opacity-2 my-2"></li>
-            <a href="/" class="navbar-brand">
-              <%= image_tag("target_flat.svg", :class => "navbar-brand-img",:alt => "target logo") %> <span class="text-white">focushift</span>
-            </a>              
+    <!-- Brand + Toggler (for mobile devices) -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navbar-->
+    <div class="collapse navbar-collapse navbar-collapse-fade" id="navbar-main-collapse">
+      <ul class="navbar-nav align-items-lg-center">
+    
+          <a href="/" class="navbar-brand">
+            <%= image_tag("target_flat.svg", :class => "navbar-brand-img",:alt => "target logo") %> 
+            <span class="text-white">focushift</span>
+          </a>         
             <!-- Application menu -->
-            <li class="nav-item" data-toggle="hover">
-              <a href="/" class="nav-link">
-                <span><i class="fas fa-home"></i>Home</span>
-              </a>
-            </li>
-            <li class="nav-item" data-toggle="hover">            
-              <a href="/tasks" class="nav-link">
-                <span><i class="fas fa-inbox"></i>Inbox</span>
-              </a>
-            </li>
-            <li class="nav-item" data-toggle="hover">
-              <a href="/contexts" class="nav-link">
-                <span><i class="fas fa-map-marker-alt"></i>Contexts</span>
-              </a>
-            </li>
-            <li class="nav-item" data-toggle="hover">
-              <a href="/projects" class="nav-link">
-                <span class="btn-inner--icon d-block"><i class="fas fa-tasks"></i>Projects</span>
-              </a>
-            </li>
-            <li class="nav-item" data-toggle="hover">
-              <a href="/partnerships" class="nav-link">
-                <span class="btn-inner--icon d-block"><i class="fas fa-hands-helping"></i>Partnerships</span>
-              </a>
-            </li>     
-          </ul>
+        <li class="nav-item" data-toggle="hover">
+          <a href="/" class="nav-link">
+            <span><i class="fas fa-home"></i>Home</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="hover">            
+          <a href="/tasks" class="nav-link">
+            <span>
+              <i class="fas fa-inbox"></i>
+              Inbox
+            </span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="hover">
+          <a href="/contexts" class="nav-link">
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+              Contexts
+            </span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="hover">
+          <a href="/projects" class="nav-link">
+            <span class="btn-inner--icon d-block">
+              <i class="fas fa-tasks"></i>
+              Projects
+            </span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="hover">
+          <a href="/partnerships" class="nav-link">
+            <span class="btn-inner--icon d-block">
+              <i class="fas fa-hands-helping"></i>
+              Partnerships
+            </span>
+          </a>
+        </li>     
+      </ul>
             <!-- Right menu -->
       <ul class="navbar-nav ml-lg-auto align-items-center d-none d-lg-flex">
         <li class="nav-item dropdown dropdown-animate">
           <a class="nav-link pr-lg-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media media-pill align-items-center">
               <div class="ml-2 d-none d-lg-block">
-                <span class="mb-0 text-sm  font-weight-bold"><%= @active_user.first_name %> <%= @active_user.last_name %></span>
+                <span class="mb-0 text-sm  font-weight-bold">
+                  <%= @active_user.first_name %> <%= @active_user.last_name %>
+                </span>
               </div>
             </div>
           </a>
