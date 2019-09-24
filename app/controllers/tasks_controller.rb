@@ -55,12 +55,6 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
-  def search
-    @task = Task.new
-    @tasks = current_user.tasks.search_results(params[:search])
-    render :index
-  end
-
   private
 
   def task_params
