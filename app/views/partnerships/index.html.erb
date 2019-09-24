@@ -15,7 +15,7 @@
     </span>
     <div class="checklist">
       <% @partnerships.each do |partnership| %>
-      <div class="card border shadow-none">
+      <div class="card border">
         <div class="px-3 py-2 row align-items-center">
           <div class="col-7">
             <label class="h6 text-sm" for="<%= partnership.id %>"><%= link_to partnership.name, partnership_path(partnership) %></label>
