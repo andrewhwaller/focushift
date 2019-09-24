@@ -4,6 +4,7 @@ class Task < ApplicationRecord
 
   scope :incomplete_and_inboxed, -> { where(status: '0', project_id: nil) }
   scope :incomplete, -> { where(status: '0') }
+  scope :search_results, -> (search_parameter){ where("name like ?", search_parameter) }
   
   validates :name, presence: { message: "cannot be blank." }
 
