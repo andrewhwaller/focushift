@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2019_09_23_181741) do
     t.text "description"
     t.integer "status", default: 0
     t.integer "project_id"
-    t.integer "task_duration"
     t.string "duration"
   end
 
