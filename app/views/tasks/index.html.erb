@@ -10,7 +10,7 @@
     <% end %>
     <i class="fas fa-search ml-4"></i>
     <%= form_tag tasks_path, method: :get, class: "ml-1" do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search for a task...", class: "form-control form-control-flush" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for a task...", class: "form-control form-control-flush", autocomplete: 'off' %>
       <%= submit_tag("Search", name: nil, style: "display: none;") %>
     <% end %>
     <% if params[:project_id] %>
