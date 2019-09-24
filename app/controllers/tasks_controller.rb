@@ -9,12 +9,14 @@ class TasksController < ApplicationController
       @task.project_id = @project.id
       @tasks = @project.tasks
     elsif params[:search]
+      @search_term = params[:search]
       @task = Task.new
-      @tasks = current_user.tasks.search_results(params[:search])
+      @tasks = current_user.tasks.search_results(@search_term)
     else
       @task = Task.new
       @tasks = current_user.tasks.incomplete_and_inboxed
     end
+    # raise params.inspect
   end
 
   def show
