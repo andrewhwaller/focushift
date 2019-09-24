@@ -51,13 +51,15 @@ class TasksController < ApplicationController
   end
 
   def search
-    
+    @task = Task.new
+    @tasks = current_user.tasks.search_results(params[:search])
+    render :index
   end
 
   private
 
   def task_params
-    params.require(:task).permit(:name, :due_date, :status, :description, :project_id)
+    params.require(:task).permit(:name, :due_date, :status, :description, :project_id, :search)
   end
 
   def validate_task

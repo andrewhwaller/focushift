@@ -7,8 +7,8 @@
         <h6 class="d-inline-block mb-0"><i class="fas fa-inbox"></i> Inbox</h6>
     <% end %>
     <i class="fas fa-search ml-4"></i>
-    <%= form_with(url: "/tasks/search", method: "get", class: "ml-1") do %>
-      <%= text_field_tag 'search-box', nil, placeholder: "Search for a task...", class: "form-control form-control-flush" %>
+    <%= form_tag(tasks_path, method: :get, class: "ml-1") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for a task...", class: "form-control form-control-flush" %>
       <%= submit_tag("Search", style: "display: none;") %>
     <% end %>
     <% if params[:project_id] %>
