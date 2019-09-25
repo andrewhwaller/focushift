@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Sets Devise parameters, sets @active_user, and provides validate_object method
 class ApplicationController < ActionController::Base
   protect_from_forgery prepend: true
   prepend_before_action :authenticate_user!

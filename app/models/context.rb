@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Context model; no methods
 class Context < ApplicationRecord
   belongs_to :user
   has_many :project_contexts, dependent: :destroy

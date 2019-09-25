@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Defines Facebook omniauth method
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def facebook

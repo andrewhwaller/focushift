@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# ProjectsController
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_active_user

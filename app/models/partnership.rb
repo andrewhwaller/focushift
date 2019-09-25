@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Partnership model; no methods
 class Partnership < ApplicationRecord
   belongs_to :user
   belongs_to :partner, class_name: "User"

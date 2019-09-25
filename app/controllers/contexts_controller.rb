@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# ContextsController
 class ContextsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_active_user

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# TasksController
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_active_user

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# SessionsController
 class SessionsController < ApplicationController
   before_action :authenticate_user!
   
