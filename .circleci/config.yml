@@ -28,4 +28,3 @@ jobs:
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 orbs:
   ruby-linter: amyroi/ruby-linter@1.0.0
-version: 2.1
