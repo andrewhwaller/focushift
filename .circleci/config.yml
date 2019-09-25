@@ -33,11 +33,12 @@ jobs:
           - vendor/bundle
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       # Setup the database
-  database:
-    override:
-      - bundle exec rake db:drop
-      - bundle exec rake db:create RAILS_ENV=test
-      - bundle exec rake db:migrate RAILS_ENV=test
+       - run: 
+          name: Set up DB
+          command: |
+            bundle exec rake db:drop
+            bundle exec rake db:create db:schema:load --trace
+            bundle exec rake db:migrate
   deploy:
     docker:
       - image: buildpack-deps:trusty
@@ -49,8 +50,6 @@ workflows:
   workflow:
     jobs:
     - build
-    - database
     - deploy:
         requires:
           - build
-          - database
