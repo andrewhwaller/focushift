@@ -12,7 +12,7 @@ Rails.application.configure do
       ENV[key.to_s] = value
     end if File.exists?(env_file)
   end
-  
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
@@ -73,7 +73,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "gmail.com",
+    domain: ENV["GMAIL_DOMAIN"],
     authentication: "plain",
     enable_startttls_auto: true,
     user_name: ENV["GMAIL_USERNAME"],
