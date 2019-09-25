@@ -1,16 +1,46 @@
-<h2>Forgot your password?</h2>
+<div class="container-fluid container-application">
+  <div class="main-content position-relative">      
+    <div class="page-content">
+      <div class="min-vh-100 py-5 d-flex align-items-center">
+        <div class="w-100">
+          <div class="row justify-content-center">
+            <div class="col-sm-8 col-lg-4">
+             <div class="text-white h1">focushift</div>
+              <div class="card shadow zindex-100 mb-0">
+                <div class="card-body px-md-5 py-5">
+                  <div class="mb-5">
+                    <h6 class="h3">Forgot your password?</h6>
+                    <p class="text-muted mb-0">No problem! Let's get this done.</p>
+                  </div>
+                  <span class="clearfix"></span>
+                  <div class="form-group">
+                  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                    <%= render "devise/shared/error_messages", resource: resource %>
+                    <%= f.label :email, class: "form-control-label" %><br />
+                    <div class="input-group input-group-merge">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                      </div>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+                    </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                    <div class="mt-4">
+                      <%= button_tag(type: "submit", class: "btn btn-sm btn-primary btn-icon rounded-pill") do %>
+                        <span class="btn-inner--text">Send me password reset instructions</span> 
+                        <span class="btn-inner--icon"><i class="fas fa-reply"></i></span>
+                      <% end %>
+                    </div>
+                  <% end %>
+                  </div>
+                </div>
+                <div class="card-footer px-md-5">
+                  <%= render "users/shared/links", :class => "small font-weight-bold" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

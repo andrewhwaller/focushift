@@ -15,6 +15,7 @@
                   <span class="clearfix"></span>
                     <div class="form-group">
                     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <%= render "devise/shared/error_messages", resource: resource %>
                         <%= f.label :email, :class => "form-control-label" %><br />
                         <div class="input-group input-group-merge">
                           <div class="input-group-prepend">
