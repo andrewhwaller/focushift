@@ -33,8 +33,8 @@ jobs:
           - vendor/bundle
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       # Setup the database
-       - run: 
-          name: Set up DB
+      - run: 
+        name: Set up DB
           command: |
             bundle exec rake db:drop
             bundle exec rake db:create db:schema:load --trace
