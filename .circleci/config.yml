@@ -13,9 +13,9 @@ jobs:
 
     steps:
       - checkout
-      - ruby-linter/rubocop:
-          files: app/**/*.rb lib/**/*.rb config/**/*.rb spec/**/*.rb script/**/*.rb
-          report_dir: $CIRCLE_TEST_REPORTS
+      - run: bundle install
+      - run: rubocop
+
   test:
     post:
       - bundle exec rubocop
