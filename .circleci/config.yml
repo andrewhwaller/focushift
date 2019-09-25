@@ -14,7 +14,7 @@ jobs:
           RAILS_ENV: test
       - image: postgres:9.5
         environment:
-          POSTGRES_USER: POSTGRES_USER
+          POSTGRES_USER: postgres
           POSTGRES_DB: POSTGRES_DB
           POSTGRES_PASSWORD: POSTGRES_PASSWORD
     steps:
