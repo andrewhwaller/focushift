@@ -49,6 +49,8 @@ workflows:
   workflow:
     jobs:
     - build
+    - database
     - deploy:
         requires:
           - build
+          - database
