@@ -33,6 +33,8 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'therubyracer', :platform => :ruby
+gem 'execjs'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -51,7 +53,6 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-  gem 'execjs'
 end
 
 group :test do
@@ -65,6 +66,5 @@ end
 
 group :deployment do
   gem 'rake'
-  gem 'rubocop', '~> 0.72.0', require: false
 end
 
