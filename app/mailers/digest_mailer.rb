@@ -1,0 +1,2 @@
+class DigestMailer < ApplicationMailer
+end
