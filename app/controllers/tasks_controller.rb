@@ -29,16 +29,14 @@ class TasksController < ApplicationController
   def new
     project_options
     @task = Task.new
-    if params[:project_id]
-      @task.project_id = params[:project_id]
-    end
+    set_project_id
   end
 
   def create
     project_options
     @task = Task.new(task_params)
     @task.user_id = current_user.id
-    render :new unless validate_object(@task)
+    render :new unless save_and_redirect_to_nested_index(@task)
   end
 
   def edit
@@ -49,7 +47,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    render :edit unless validate_task
+    render :edit unless save_and_redirect_to_nested_index(@task)
   end
 
   def destroy
@@ -59,6 +57,20 @@ class TasksController < ApplicationController
   end
 
   private
+
+  def set_project_id
+    if params[:project_id]
+      @task.project_id = params[:project_id]
+    end
+  end
+
+  def redirect_to_project_for_nested_task
+    if params[:project_id]
+      redirect_to current_user.projects.find(params[:project_id])
+    else
+      redirect_to action: "index"
+    end
+  end
 
   def task_params
     params.require(:task).permit(:name, :due_date, :status, :description, :project_id, :search)

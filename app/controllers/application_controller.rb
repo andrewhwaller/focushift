@@ -20,9 +20,8 @@ class ApplicationController < ActionController::Base
     @active_user = current_user
   end
 
-  def validate_object(object)
-    if object.valid?
-      object.save
+  def save_and_redirect_to_nested_index(object)
+    if object.save
       redirect_to action: "index"
     end
   end

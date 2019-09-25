@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :partnerships do
-    resources :projects
-  end
-  resources :projects do
-    resources :tasks
-  end
   resources :tasks
+  resources :projects do
+    resources :tasks, shallow: true
+  end
+  resources :partnerships do
+    resources :projects, shallow: true
+  end
   resources :contexts do
-    resources :projects
+    resources :projects, shallow: true
   end
   devise_for :users, :controllers => { omniauth_callbacks: "users/omniauth_callbacks" }
   devise_scope :user do
