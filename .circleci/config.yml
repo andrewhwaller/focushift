@@ -4,10 +4,6 @@
 #
 version: 2
 jobs:
-
-  test:
-    post:
-      - bundle exec rubocop
   build:
     docker:
       # specify the version you desire here
@@ -20,7 +16,9 @@ jobs:
       - ruby-linter/rubocop:
           files: app/**/*.rb lib/**/*.rb config/**/*.rb spec/**/*.rb script/**/*.rb
           report_dir: $CIRCLE_TEST_REPORTS
-
+  test:
+    post:
+      - bundle exec rubocop
   deploy:
     docker:
       - image: buildpack-deps:trusty
@@ -30,5 +28,3 @@ jobs:
           name: Deploy Master to Heroku
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-orbs:
-  ruby-linter: amyroi/ruby-linter@1.0.0
