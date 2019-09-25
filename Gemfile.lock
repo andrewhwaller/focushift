@@ -277,6 +277,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  execjs
   figaro
   font-awesome-sass (~> 5.8.1)
   jbuilder (~> 2.5)
