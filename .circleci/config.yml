@@ -14,11 +14,7 @@ jobs:
     steps:
       - checkout
       - run: bundle install
-      - run: rubocop
-
-  test:
-    post:
-      - bundle exec rubocop
+      - run: bundle exec rubocop
   deploy:
     docker:
       - image: buildpack-deps:trusty
