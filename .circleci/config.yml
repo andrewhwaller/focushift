@@ -35,10 +35,10 @@ jobs:
       # Setup the database
       - run: 
         name: Set up DB
-          command: |
-            bundle exec rake db:drop
-            bundle exec rake db:create db:schema:load --trace
-            bundle exec rake db:migrate
+            command: |
+              bundle exec rake db:drop
+              bundle exec rake db:create db:schema:load --trace
+              bundle exec rake db:migrate
   deploy:
     docker:
       - image: buildpack-deps:trusty
