@@ -10,6 +10,7 @@ class Project < ApplicationRecord
   has_many :partnerships, through: :project_partnerships
 
   scope :incomplete, -> { where(status: '0') }
+  scope :due_this_week, -> { where(due_date: 1.week.ago..Date.today) }
 
   validates :name, presence: { message: "cannot be blank" }
   validates_uniqueness_of :name, scope: :user_id

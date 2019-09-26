@@ -8,6 +8,7 @@ class Task < ApplicationRecord
   scope :incomplete_and_inboxed, -> { where(status: '0', project_id: nil) }
   scope :incomplete, -> { where(status: '0') }
   scope :search_results, -> (search_term) { where('name LIKE ?', "%#{search_term}%") }
+  scope :due_this_week, -> { where(due_date: 1.week.ago..Date.today) }
   
   validates :name, presence: { message: "cannot be blank." }
 
