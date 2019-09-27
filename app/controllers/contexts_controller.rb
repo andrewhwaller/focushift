@@ -23,7 +23,7 @@ class ContextsController < ApplicationController
   def create
     @context = Context.new(context_params)
     @context.user_id = current_user.id
-    render :new unless validate_object(@context)
+    render :new unless save_and_redirect_to_nested_index(@context)
   end
 
   def edit
@@ -33,7 +33,7 @@ class ContextsController < ApplicationController
   def update
     @context = Context.find(params[:id])
     @context.update(context_params)
-    render :edit unless validate_object(@context)
+    render :edit unless save_and_redirect_to_nested_index(@context)
   end
 
   def destroy

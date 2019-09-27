@@ -22,7 +22,7 @@ class PartnershipsController < ApplicationController
   def create
     @partnership = Partnership.new(partnership_params)
     @partnership.user_id = current_user.id
-    render :new unless validate_object(@partnership)
+    render :new unless save_and_redirect_to_nested_index(@partnership)
   end
 
   def edit
@@ -32,7 +32,7 @@ class PartnershipsController < ApplicationController
   def update
     @partnership = Partnership.find(params[:id])
     @partnership.update(partnership_params)
-    render :edit unless validate_object(@partnership)
+    render :edit unless save_and_redirect_to_nested_index(@partnership)
   end
 
   def destroy
