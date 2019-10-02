@@ -24,7 +24,7 @@
                     <%= f.check_box :status, :class => "custom-control-input toggle", :id => project.id, :value => true, :onchange => "this.form.submit();" %>
                   <% end %>
                   <label class="custom-control-label h6 text-sm" for="<%= project.id %>">
-                    <%= link_to project.name, context_project_path(@context, project) %>
+                    <%= link_to project.name, project_path(project) %>
                   </label>
                 </div>
               </div>
