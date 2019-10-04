@@ -34,7 +34,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'execjs'
-gem 'mini_racer'
+gem 'mini_racer', :platforms => :ruby
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
