@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     elsif params[:search]
       @search_term = params[:search]
       @task = Task.new
-      @tasks = current_user.tasks.search_results(@search_term)
+      @tasks = current_user.tasks.search_results(@search_term.downcase)
     else
       @task = Task.new
       @tasks = current_user.tasks.incomplete_and_inboxed
