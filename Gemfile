@@ -33,7 +33,6 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'figaro'
-gem 'therubyracer', :platform => :ruby
 gem 'execjs'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
