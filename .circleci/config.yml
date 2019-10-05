@@ -31,7 +31,6 @@ jobs:
         key: focushift-{{ checksum "Gemfile.lock" }}
         paths:
             - vendor/bundle
-      - run: rubocop
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       # Setup the database
       - run: 
@@ -40,6 +39,9 @@ jobs:
             bundle exec rake db:drop
             bundle exec rake db:create db:schema:load --trace
             bundle exec rake db:migrate
+  test:
+    post:
+      - bundle exec rubocop
   deploy:
     docker:
       - image: buildpack-deps:trusty
