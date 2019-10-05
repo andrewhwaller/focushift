@@ -2,7 +2,8 @@
   "name": "focushift",
   "private": true,
   "dependencies": {
-    "webpack": "^4.41.0"
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   },
   "scripts": {
     "heroku-prebuild": "npm install --dev",
