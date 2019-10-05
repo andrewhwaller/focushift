@@ -39,18 +39,10 @@ jobs:
             bundle exec rake db:drop
             bundle exec rake db:create db:schema:load --trace
             bundle exec rake db:migrate
-  test:
-    working_directory: ~/focushift
-    docker:
-      - image: circleci/ruby:2.6.3
-    steps:
-      - checkout
-      - run: gem install bundler
-      - type: cache-restore
-        name: Restore bundle cache
-        key: focushift-{{ checksum "Gemfile.lock" }
-      - run: bundle install --path vendor/bundle  
-      - run: bundle exec rubocop
+      - run: 
+          name: run rubocop
+          command: |
+            bundle exec rubocop
   deploy:
     docker:
       - image: buildpack-deps:trusty
