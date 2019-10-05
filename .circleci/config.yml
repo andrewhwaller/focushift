@@ -40,6 +40,9 @@ jobs:
             bundle exec rake db:create db:schema:load --trace
             bundle exec rake db:migrate
   test:
+    working_directory: ~/focushift
+    docker:
+      - image: circleci/ruby:2.6.3
     steps:
       - run: bundle exec rubocop
   deploy:
