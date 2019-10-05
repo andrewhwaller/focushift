@@ -69,6 +69,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers', '~> 4.0'
   gem 'rubocop', '~> 0.72.0', require: false
+  gem 'shoulda-matchers'
 end
 
 group :deployment do

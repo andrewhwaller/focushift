@@ -353,6 +353,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   shoulda (~> 3.5)
+  shoulda-matchers
   thor (~> 0.20.3)
   turbolinks (~> 5)
   tzinfo
