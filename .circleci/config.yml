@@ -46,8 +46,10 @@ jobs:
     steps:
       - checkout
       - run: gem install bundler
-      - run: gem install rubocop
-      - run: gem install rake
+      - type: cache-restore
+        name: Restore bundle cache
+        key: focushift-{{ checksum "Gemfile.lock" }
+      - run: bundle install --path vendor/bundle  
       - run: bundle exec rubocop
   deploy:
     docker:
