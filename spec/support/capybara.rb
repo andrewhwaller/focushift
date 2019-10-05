@@ -1,6 +1,6 @@
-# frozen_string_literal: true 
+# frozen_string_literal: true
 
-# spec/support/capybara.rb 
+# spec/support/capybara.rb
 
 RSpec.configure do |config|
   config.before(:each, type: :system) do
