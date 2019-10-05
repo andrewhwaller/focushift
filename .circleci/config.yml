@@ -47,6 +47,7 @@ jobs:
       - checkout
       - run: gem install bundler
       - run: gem install rubocop
+      - run: gem install rake
       - run: bundle exec rubocop
   deploy:
     docker:
