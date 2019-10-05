@@ -66,7 +66,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'webdrivers', '~> 4.0'
   gem 'rubocop', '~> 0.72.0', require: false
 end
 
