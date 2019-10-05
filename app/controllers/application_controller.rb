@@ -21,8 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def save_and_redirect_to_nested_index(object)
-    if object.save 
-      redirect_to action: "index"
+    if object.save then redirect_to action: "index"
     end
   end
 end
