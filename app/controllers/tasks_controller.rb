@@ -68,7 +68,7 @@ class TasksController < ApplicationController
     if params[:project_id]
       redirect_to current_user.projects.find(params[:project_id])
     else
-      redirect_to action: "index"
+      redirect_to action: 'index'
     end
   end
 
