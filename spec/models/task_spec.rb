@@ -8,7 +8,8 @@ RSpec.describe Task, type: :model do
   it 'is valid with valid attributes' do
     test_user = User.create!(
       email: 'test@example.com',
-      password: 'password123')
+      password: 'password123'
+    )
     subject.user_id = test_user.id
     subject.name = 'Test'
     expect(subject).to be_valid

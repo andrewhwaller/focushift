@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
   end
 
   subject { described_class.new(password: 'some_password', email: 'john@doe.com') }
-
+  
   describe 'Validations' do
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
@@ -38,4 +38,3 @@ RSpec.describe User, type: :model do
     it { should have_many(:partners) }
   end
 end
-

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Partnership, type: :model do
@@ -8,4 +10,3 @@ RSpec.describe Partnership, type: :model do
     it { should have_many(:projects).through(:project_partnerships) }
   end
 end
-
