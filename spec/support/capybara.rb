@@ -1,4 +1,7 @@
-#spec/support/capybara.rb
+# frozen_string_literal: true 
+
+# spec/support/capybara.rb 
+
 RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by :rack_test
