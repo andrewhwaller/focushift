@@ -2,5 +2,7 @@
   "name": "focushift",
   "private": true,
   "dependencies": {},
-  "scripts": {}
+  "scripts": {
+    "heroku-prebuild": "npm install --dev"
+  }
 }
