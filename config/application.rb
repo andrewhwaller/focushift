@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'boot'
 
 require 'rails/all'
@@ -23,5 +21,8 @@ module Focushift
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
+    
+    config.read_encrypted_secrets = true
+    
   end
 end

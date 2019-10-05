@@ -36,9 +36,7 @@ jobs:
       - run: 
           name: Set up DB
           command: |
-            bundle exec rake db:drop
-            bundle exec rake db:create db:schema:load --trace
-            bundle exec rake db:migrate
+            bundle exec rake db:prepare
       - run: 
           name: run rubocop
           command: |

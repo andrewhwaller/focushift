@@ -36,3 +36,9 @@
 /config/local_env.yml
 
 Procfile
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
