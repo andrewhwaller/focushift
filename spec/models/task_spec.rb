@@ -3,7 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  it 'is valid with valid attributes'
-  it 'is not valid without a name'
-  it 'is not valid without a user'
+  subject { described_class.new }
+
+  it 'is valid with valid attributes' do
+    subject.name = 'Test'
+    expect(subject).to be_valid
+  end
+  it 'is not valid without a name' do
+    expect(subject).to_not be_valid
+  end
+  it 'is not valid without a user' do
+    expect(subject).to_not be_valid
+  end
 end
