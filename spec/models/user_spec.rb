@@ -3,6 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'is database authenticatable' do
+    user = User.create(
+      email: 'test@example.com',
+      password: 'testpassword',
+      password_confirmation: 'testpassword'
+    )
+    expect(user.valid_password?('testpassword')).to be_truthy
+  end
 end
 
