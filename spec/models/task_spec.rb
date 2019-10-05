@@ -15,4 +15,9 @@ RSpec.describe Task, type: :model do
   it 'is not valid without a user' do
     expect(subject).to_not be_valid
   end
+
+  describe 'Associations' do
+    it { should belong_to(:user) }
+    it { should have_one(:project).class_name('Project').with_foreign_key('project_id') }
+  end
 end
