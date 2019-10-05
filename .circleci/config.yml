@@ -40,8 +40,8 @@ jobs:
             bundle exec rake db:create db:schema:load --trace
             bundle exec rake db:migrate
   test:
-    post:
-      - bundle exec rubocop
+    steps:
+      - run: bundle exec rubocop
   deploy:
     docker:
       - image: buildpack-deps:trusty
