@@ -76,13 +76,6 @@ class TasksController < ApplicationController
     params.require(:task).permit(:name, :due_date, :status, :description, :project_id, :search)
   end
 
-  def validate_task
-    if @task.valid?
-      @task.save
-      redirect_to tasks_path
-    end
-  end
-
   def project_options
     @project_options = current_user.projects.all.incomplete.map{ |p| [ p.name, p.id ] }
   end
