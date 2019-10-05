@@ -9,7 +9,7 @@ ruby '2.6.3'
 gem 'rails', github: 'rails/rails'
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
-gem 'dotenv-rails'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
