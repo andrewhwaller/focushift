@@ -14,9 +14,11 @@ RSpec.describe Task, type: :model do
     subject.name = 'Test'
     expect(subject).to be_valid
   end
+
   it 'is not valid without a name' do
     expect(subject).to_not be_valid
   end
+  
   it 'is not valid without a user' do
     expect(subject).to_not be_valid
   end
