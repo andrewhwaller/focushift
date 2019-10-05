@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "heroku-prebuild": "npm install --dev"
+    "heroku-prebuild": "npm install --dev",
+    "build": "node node_modules/webpack/bin/webpack.js --display-error-details"
   }
 }
