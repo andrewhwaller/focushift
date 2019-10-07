@@ -3,30 +3,24 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it 'is database authenticatable' do
-    user = User.create(
-      email: 'test@example.com',
-      password: 'testpassword',
-      password_confirmation: 'testpassword'
-    )
-    expect(user.valid_password?('testpassword')).to be_truthy
-  end
 
-  subject { described_class.new(password: 'some_password', email: 'john@doe.com') }
+  before(:all) do
+    @test_user_1 = create(:user)
+  end
   
   describe 'Validations' do
     it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+      expect(@test_user_1).to be_valid
     end
 
     it 'is not valid without a password' do
-      subject.password = nil
-      expect(subject).to_not be_valid
+      @test_user_1.password = nil
+      expect(@test_user_1).to_not be_valid
     end
 
     it 'is not valid without an email' do
-      subject.email = nil
-      expect(subject).to_not be_valid
+      @test_user_1.email = nil
+      expect(@test_user_1).to_not be_valid
     end
   end
 
