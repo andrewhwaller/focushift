@@ -70,6 +70,7 @@ group :test do
   gem 'webdrivers', '~> 4.0'
   gem 'rubocop', '~> 0.72.0', require: false
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
 group :deployment do
