@@ -23,6 +23,6 @@ module Focushift
     end
     
     config.read_encrypted_secrets = true
-    
+    config.assets.enabled = false
   end
 end
