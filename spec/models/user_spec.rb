@@ -5,22 +5,22 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   before(:all) do
-    @test_user_1 = create(:user)
+    @user = build(:user)
   end
   
   describe 'Validations' do
     it 'is valid with valid attributes' do
-      expect(@test_user_1).to be_valid
+      expect(@user).to be_valid
     end
 
     it 'is not valid without a password' do
-      @test_user_1.password = nil
-      expect(@test_user_1).to_not be_valid
+      @user.password = nil
+      expect(@user).to_not be_valid
     end
 
     it 'is not valid without an email' do
-      @test_user_1.email = nil
-      expect(@test_user_1).to_not be_valid
+      @user.email = nil
+      expect(@user).to_not be_valid
     end
   end
 
