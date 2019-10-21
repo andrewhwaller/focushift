@@ -42,5 +42,7 @@ Procfile
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-coverage/index.html
+coverage/assets/0.10.2/application.js
+coverage/assets/0.10.2/application.css
 coverage/.resultset.json
+coverage/index.html

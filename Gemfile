@@ -52,6 +52,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'shoulda', '~> 3.5'
+  gem 'faker'
+  gem 'minitest'
 end
 
 group :development do
@@ -71,6 +73,7 @@ group :test do
   gem 'rubocop', '~> 0.72.0', require: false
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'database_cleaner'
 end
 
 group :deployment do
