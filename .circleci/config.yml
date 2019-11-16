@@ -3,8 +3,6 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-orbs:
-  heroku: circleci/heroku@1.0.0
 jobs:
   build:
     working_directory: ~/focushift
@@ -44,11 +42,11 @@ jobs:
           command: |
             bundle exec rubocop
   deploy:
-    executor: heroku/default # Uses the basic buildpack-deps image, which has the prerequisites for installing heroku's CLI.
+    docker:
+      - image: buildpack-deps:trusty
     steps:
       - checkout
-      - heroku/install # Runs the heroku install command, if necessary.
-      - heroku/deploy-via-git # Deploys branch to Heroku via git push.
+      - run: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 workflows:
   version: 2
   workflow:
